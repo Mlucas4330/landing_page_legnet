@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Legnet</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+
+  <header class="sticky top-0 z-50 p-4 w-full">
+    <div class="container relative mx-auto flex justify-between items-center">
+      <div class="flex gap-2 items-center">
+        <a href="index.html" class="glass-button p-3 flex items-center justify-center">
+          <img src="./assets/icon_neon_legnet.png" alt="Legnet" class="neon-glow h-8 w-8" />
+        </a>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> Legnet <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute glass items-center p-4 mt-3 flex gap-5">
+            <div class="p-4">
+              <a class="block underline" href="#">Certificações</a>
+              <a class="block underline mt-2" href="#">Sobre nós</a>
+              <img class="mt-5 h-8 w-8" src="./assets/icon_neon_legnet.png" alt="Legnet">
+            </div>
+            <div class="p-4">
+              <iframe class="rounded-lg" src="https://www.youtube.com/embed/bWTlU5edVrI?si=NCW7wg-4PLoTt42l"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> Requisitos Legais <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute glass mt-3 p-4">
+            <a href="#" class="block px-4 py-2 underline">AGILE</a>
+            <a href="#" class="block px-4 py-2 underline">GOR</a>
+            <a href="#" class="block px-4 py-2 underline">LAIPR</a>
+            <a href="#" class="block px-4 py-2 underline">MÓDULO BI</a>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> Serviços <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute glass left-0 mt-3 flex gap-5 p-4">
+            <div>
+              <h4 class="text-lg text-center">Serviços Legnet</h4>
+              <div class="flex gap-4 mt-3">
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">Auditoria Remota ou Presencial</a>
+                  <a class="block px-4 py-2 underline" href="#">Terceirização da Gestão (Outsourcing)</a>
+                  <a class="block px-4 py-2 underline" href="#">Avaliação de Requisitos Legais</a>
+                  <a class="block px-4 py-2 underline" href="#">Implantação de Certificação ISO</a>
+                </div>
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">Licenciamento para Produtos Controlados</a>
+                  <a class="block px-4 py-2 underline" href="#">Licenciamento Ambiental</a>
+                  <a class="block px-4 py-2 underline" href="#">Licenciamento Ambiental de Base Operacional em
+                    Aeroportos</a>
+                  <a class="block px-4 py-2 underline" href="#">Levantamento de Aspetos e Impactos</a>
+                </div>
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">Levantamento de Perigos e Riscos</a>
+                  <a class="block px-4 py-2 underline" href="#">Treinamentos, Palesras e Workshops</a>
+                  <a class="block px-4 py-2 underline" href="#">Gap Analysis ISO 45001</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4 class="text-lg text-center">Certificações ISO</h4>
+              <div class="flex gap-4 mt-3">
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">ISO 9001 - Qualidade</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 14001 - Meio Ambiente</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 45001 - Saúde e Segurança do Trabalho</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 16001 / SA 8000 - Responsabilidade Social</a>
+                </div>
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">ISO 22000 / FSSC 22000 - Segurança Alimentar</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 39001 - Sistema de Seguança Viária</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 50001 - Energia</a>
+                  <a class="block px-4 py-2 underline" href="#">NBR 15401 - Turismo Sustentável</a>
+                </div>
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">NBR ISO 37001 / ISO 19600 - Compliance e
+                    Antissuborno</a>
+                  <a class="block px-4 py-2 underline" href="#">SASSMAQ</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> Softwares <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute left-0 glass p-4 mt-3">
+            <h4 class="text-lg text-center">Softwares Legnet</h4>
+            <div class="flex gap-5 mt-5">
+              <div>
+                <a href="#" class="block px-4 py-2 underline">AGILE - Gerenciador de Requisitos Legais</a>
+                <a href="#" class="block px-4 py-2 underline">GLIC - Gerenciador de Licenças</a>
+                <a href="#" class="block px-4 py-2 underline">GNC - Gerenciador de Não-Conformidados</a>
+                <a href="#" class="block px-4 py-2 underline">GEDOC - Gerenciador de Documentos</a>
+              </div>
+              <div>
+                <a href="#" class="block px-4 py-2 underline">GIA - Gerenciador Integrado de Ações</a>
+                <a href="#" class="block px-4 py-2 underline">GFOR - Gerenciador de Fornecedores</a>
+                <a href="#" class="block px-4 py-2 underline">GOR - Gestão de Outros Requisitos</a>
+                <a href="#" class="block px-4 py-2 underline">GRISCO - Gerenciador de Riscos</a>
+              </div>
+              <div>
+                <a href="#" class="block px-4 py-2 underline">GAUD - Gerenciador de Auditoria</a>
+                <a href="#" class="block px-4 py-2 underline">GMUD - Gerenciador de Mudanças</a>
+                <a href="#" class="block px-4 py-2 underline">GCORE - Gerenciamento de Resíduos</a>
+                <a href="#" class="block px-4 py-2 underline">GOM - Gerenciador de Objetivos e Metas</a>
+              </div>
+              <div>
+                <a href="#" class="block px-4 py-2 underline">GEATA - Gerenciador de Atas de Reunião</a>
+                <a href="#" class="block px-4 py-2 underline">LAIPR - Levantamento de Aspectos, Impactos, Perigos e
+                  Riscos</a>
+                <a href="#" class="block px-4 py-2 underline">GEROC - Gerenciador de Ocorrências</a>
+                <a href="#" class="block px-4 py-2 underline">GRO-PGR - Programa de Gerenciamento de Riscos</a>
+              </div>
+              <div>
+                <a href="#" class="block px-4 py-2 underline">GFISPQ - Gerenciador de FISPQ</a>
+                <a href="#" class="block px-4 py-2 underline">GERGO - Gerenciador de Ergonomia</a>
+                <a href="#" class="block px-4 py-2 underline">MÓDULO BI - Integre qualquer software Legnet ao Power
+                  BI</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> EAD <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute glass mt-3 p-4">
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Cursos Sobre Gestão de
+              Qualidade</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Cursos Sobre Meio
+              Ambiente</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Cursos Livres Sobre
+              Gestão</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Cursos Sobre Saúde e
+              Segurança
+              Ocupacional</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Meus Cursos</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Acessar</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Contato</a>
+          </div>
+        </div>
+
+        <a href="blog.html" target="_blank" class="glass-button px-6 py-3"> Blog </a>
+      </div>
+
+      <div class="flex gap-2 items-center">
+        <button class="access-button neon-button px-6 py-3"> Acessar Legnet </button>
+        <button class="neon-button px-6 py-3 font-medium"> Fale Conosco </button>
+      </div>
+    </div>
+  </header>
+
+  <div x-data="{
+    // --- ESTADO INICIAL ---
+    activeFilter: 'Todos',
+    searchQuery: '',
+    isSearchOpen: false,
+    currentPage: 1,
+    itemsPerPage: 4,
+    filters: ['Todos', 'Conformidade', 'Estudos de Caso', 'Legislação'],
+
+    // --- FONTE DE DADOS PRINCIPAL ---
+    posts: [
+      { id: 1, category: 'Legislação', title: 'O Crescimento das Regulamentações no Setor de Apostas', img: 'https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=2070&auto=format&fit=crop' },
+      { id: 2, category: 'Conformidade', title: 'Saúde Mental Nas Empresas: A Nova NR1', img: 'https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?q=80&w=2070&auto=format&fit=crop' },
+      { id: 3, category: 'Legislação', title: 'A Importância Vital Do Licenciamento Ambiental', img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop' },
+      { id: 4, category: 'Estudos de Caso', title: 'Auditoria Legal Remota: Etapas e Desafios', img: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop' },
+      { id: 5, category: 'Legislação', title: 'O Modelo Híbrido na Legnet: Flexibilidade e Produtividade', img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop' },
+      { id: 6, category: 'Estudos de Caso', title: 'A Importância da Análise de GAP para Certificações ISO', img: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop' },
+      { id: 7, category: 'Conformidade', title: 'Calor! Como Proteger Trabalhadores Durante Ondas de Calor', img: 'https://images.unsplash.com/photo-1667993079208-a47d1544ee39?q=80&w=1932&auto=format&fit=crop' },
+      { id: 8, category: 'Legislação', title: 'Novas Regulamentações Ambientais para 2025', img: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071&auto=format&fit=crop' }
+    ],
+
+    // --- LÓGICA COMPUTADA (Getters Puros, apenas para cálculo) ---
+
+    // 1. Filtra os posts. AGORA SEM MODIFICAR O ESTADO.
+    get filteredPosts() {
+      if (this.searchQuery.trim().length > 1) {
+        return this.posts.filter(post => 
+          post.title.toLowerCase().includes(this.searchQuery.trim().toLowerCase())
+        );
+      }
+      if (this.activeFilter === 'Todos') {
+        return this.posts;
+      }
+      return this.posts.filter(post => post.category === this.activeFilter);
+    },
+
+    // 2. Calcula o total de páginas.
+    get totalPages() {
+      if (this.filteredPosts.length === 0) return 0;
+      return Math.ceil(this.filteredPosts.length / this.itemsPerPage);
+    },
+
+    // 3. Fatia os posts para a página atual.
+    get paginatedPosts() {
+      const start = (this.currentPage - 1) * this.itemsPerPage;
+      const end = start + this.itemsPerPage;
+      return this.filteredPosts.slice(start, end);
+    }
+}">
+
+    <section class="pt-12 pb-12">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center text-sm text-gray-500 mb-8">
+          <a href="#" class="hover:text-blue-500 transition-colors">Home</a>
+          <span class="mx-2">/</span>
+          <span class="font-medium text-gray-800">Blog</span>
+        </div>
+        <div class="flex items-center mb-12">
+          <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+            <img src="https://via.placeholder.com/64" alt="Blog Legnet" class="w-full h-full object-cover">
+          </div>
+          <h1 class="text-5xl font-bold">Nosso Blog</h1>
+        </div>
+        <div class="flex flex-wrap gap-3 mb-8 items-center">
+          <button @click="isSearchOpen = !isSearchOpen"
+            class="flex items-center justify-center w-12 h-12 rounded-full neon-button"
+            aria-label="Abrir ou fechar busca">
+            <i class="bi text-xl" :class="isSearchOpen ? 'bi-x-lg' : 'bi-search'"></i>
+          </button>
+          <div x-show="isSearchOpen" x-transition>
+            <input type="text" x-model.debounce.300ms="searchQuery" @input="activeFilter = 'Todos'; currentPage = 1"
+              placeholder="Buscar por título..."
+              class="px-4 py-3 rounded-full border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <template x-for="filter in filters" :key="filter">
+            <button @click="activeFilter = filter; searchQuery = ''; currentPage = 1"
+              :class="['px-6 py-3 transition-colors duration-300', activeFilter === filter ? 'active-glass-button' : 'glass-button']">
+              <span x-text="filter === 'Todos' ? 'Todos os tópicos' : filter"></span>
+            </button>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 min-h-[450px]">
+          <template x-for="post in paginatedPosts" :key="post.id">
+            <div class="blog-post group relative rounded-2xl overflow-hidden shadow-lg h-[400px]">
+              <div class="absolute inset-0 w-full h-full"><img :src="post.img" :alt="post.title"
+                  class="w-full h-full object-cover"></div>
+              <div class="blog-post-overlay absolute inset-0 opacity-70 group-hover:opacity-90 transition-opacity">
+              </div>
+              <div class="absolute bottom-0 left-0 p-6 z-10">
+                <span class="inline-block font-semibold mb-2"
+                  :class="{'text-category-legislation': post.category === 'Legislação', 'text-category-compliance': post.category === 'Conformidade', 'text-category-case-study': post.category === 'Estudos de Caso'}"
+                  x-text="post.category + ':'"></span>
+                <h2 class="text-white text-2xl font-bold leading-tight" x-text="post.title"></h2>
+              </div>
+              <a href="#" class="absolute inset-0 z-20" :aria-label="'Ler artigo sobre ' + post.title"></a>
+            </div>
+          </template>
+          <div x-show="paginatedPosts.length === 0" class="col-span-full text-center text-gray-500 py-16">
+            <p class="text-xl">Nenhum post encontrado.</p>
+            <p class="mt-2">Tente alterar seu filtro ou termo de busca.</p>
+          </div>
+        </div>
+        <div class="flex justify-center items-center mt-5 space-x-2" x-show="totalPages > 1">
+          <button @click="currentPage = Math.max(1, currentPage - 1)" :disabled="currentPage === 1"
+            class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-200 text-gray-700 hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Página anterior"><i class="bi bi-chevron-left"></i></button>
+          <template x-for="page in totalPages" :key="page">
+            <button @click="currentPage = page"
+              class="w-10 h-10 rounded-full flex items-center justify-center transition-colors"
+              :class="currentPage === page ? 'neon-button' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'">
+              <span x-text="page"></span>
+            </button>
+          </template>
+          <button @click="currentPage = Math.min(totalPages, currentPage + 1)" :disabled="currentPage === totalPages"
+            class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-200 text-gray-700 hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Próxima página"><i class="bi bi-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="fixed bottom-24 right-4 z-50 floating-video-container">
+    <div class="relative">
+      <video width="100%" height="100%" style="height: 280px; width: 180px; border-radius: 48px !important;" controls
+        controlsList="nodownload" disablePictureInPicture autoPlay loop muted playsInline
+        class="object-cover shadow-lg">
+        <source src="./assets/criativo_02_vertical.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeos.
+      </video>
+      <button
+        class="absolute -top-2 -right-2 bg-gray-800 text-white rounded-full w-6 h-6 p-1 flex items-center justify-center">x</button>
+    </div>
+    <a href="https://wa.me/5521997279076" target="_blank"
+      style="color: black !important; border-radius: 48px; display: flex !important;" rel="noopener noreferrer"
+      class="whatsapp-floating-button mt-2 flex items-center justify-center gap-2 bg-[#c5ff00] text-black font-medium py-2 px-4 shadow-lg hover:shadow-xl transition-all">
+      <i class="bi bi-telephone"></i>
+      WhatsApp
+    </a>
+  </div>
+
+  <footer class="bg-[#f5f5f5]">
+    <div class="container mx-auto px-4 pb-8 pt-8">
+      <div class="text-center">
+        <p class="text-gray-600 font-light">© 2025 Agile. Todos os direitos reservados.</p>
+      </div>
+    </div>
+    <div class="bg-[#c5ff00] py-4 sticky bottom-0 left-0 right-0 z-40 shadow-lg">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <p class="font-medium text-black">Precisa de ajuda? Fale conosco!</p>
+        <a href="https://wa.me/5521997279076" target="_blank" rel="noopener noreferrer"
+          class="bg-black text-white font-medium py-2 px-6 rounded-full flex items-center gap-2 hover:bg-gray-800 transition-colors">
+          <i class="bi bi-telephone"></i>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

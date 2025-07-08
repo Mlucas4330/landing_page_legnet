@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legnet</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+
+  <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 z-50 p-4 w-full">
+    <div class="container relative mx-auto flex justify-between items-center">
+
+      <div class="hidden lg:flex gap-2 items-center">
+        <a href="index.html" class="glass-button p-3 flex items-center justify-center">
+          <img src="./assets/icon_neon_legnet.png" alt="Legnet" class="neon-glow h-8 w-8" />
+        </a>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> Legnet <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute glass items-center p-4 mt-3 flex gap-5 w-max">
+            <div class="p-4">
+              <a class="block underline" href="#">Certificações</a>
+              <a class="block underline mt-2" href="#">Sobre nós</a>
+              <img class="mt-5 h-8 w-8" src="./assets/icon_neon_legnet.png" alt="Legnet">
+            </div>
+            <div class="p-4">
+              <iframe class="rounded-lg" src="https://www.youtube.com/embed/bWTlU5edVrI?si=NCW7wg-4PLoTt42l"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> Requisitos Legais <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute glass mt-3 p-4 w-max">
+            <a href="#" class="block px-4 py-2 underline">AGILE</a>
+            <a href="#" class="block px-4 py-2 underline">GOR</a>
+            <a href="#" class="block px-4 py-2 underline">LAIPR</a>
+            <a href="#" class="block px-4 py-2 underline">MÓDULO BI</a>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> Serviços <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute glass left-0 mt-3 flex gap-5 p-4 w-max">
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> Softwares <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute glass left-0 mt-3 p-4 w-max">
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> EAD <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute glass mt-3 p-4 w-max">
+          </div>
+        </div>
+
+        <a href="blog.html" target="_blank" class="glass-button px-6 py-3"> Blog </a>
+      </div>
+
+      <a href="index.html" class="lg:hidden glass-button p-3 flex items-center justify-center">
+        <img src="./assets/icon_neon_legnet.png" alt="Legnet" class="neon-glow h-8 w-8" />
+      </a>
+
+
+      <div class="flex gap-2 items-center">
+        <div class="hidden sm:flex gap-2"> <button class="access-button neon-button px-6 py-3"> Acessar Legnet </button>
+          <button class="neon-button px-6 py-3 font-medium"> Fale Conosco </button>
+        </div>
+        <button @click="mobileMenuOpen = !mobileMenuOpen"
+          class="lg:hidden glass-button px-6 py-3 flex items-center justify-center">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+
+      <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="transform -translate-x-full" x-transition:enter-end="transform translate-x-0"
+        x-transition:leave="transition ease-in duration-300" x-transition:leave-start="transform translate-x-0"
+        x-transition:leave-end="transform -translate-x-full"
+        class="fixed top-0 left-0 w-full h-full bg-white z-50 lg:hidden" @click.away="mobileMenuOpen = false">
+        <div class="flex justify-end p-4">
+          <button @click="mobileMenuOpen = false">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <nav class="flex flex-col items-center justify-center h-full -mt-16 text-xl space-y-4">
+          <div x-data="{ open: false }">
+            <button @click="open = !open" class="flex items-center gap-2 px-6 py-3">
+              Legnet <i class="bi bi-caret-down transition-transform" :class="{ 'rotate-180': open }"></i>
+            </button>
+            <div x-show="open" class="flex flex-col items-center text-base space-y-2 mt-2">
+              <a class="block underline" href="#">Certificações</a>
+              <a class="block underline" href="#">Sobre nós</a>
+            </div>
+          </div>
+
+          <div x-data="{ open: false }">
+            <button @click="open = !open" class="flex items-center gap-2 px-6 py-3">
+              Requisitos Legais <i class="bi bi-caret-down transition-transform" :class="{ 'rotate-180': open }"></i>
+            </button>
+            <div x-show="open" class="flex flex-col items-center text-base space-y-2 mt-2">
+              <a href="#" class="block underline">AGILE</a>
+              <a href="#" class="block underline">GOR</a>
+              <a href="#" class="block underline">LAIPR</a>
+              <a href="#" class="block underline">MÓDULO BI</a>
+            </div>
+          </div>
+
+          <a href="blog.html" target="_blank" class="px-6 py-3">Blog</a>
+
+          <div class="flex flex-col gap-4 mt-8 pt-4">
+            <button class="access-button neon-button px-6 py-3"> Acessar Legnet </button>
+            <button class="neon-button px-6 py-3 font-medium"> Fale Conosco </button>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative" style="min-height: 100vh;">
+    <video class="absolute w-full h-full object-cover -z-10" src="./assets/hero_video.mp4" autoplay loop muted></video>
+
+    <div x-data="{ open: true}" x-show="open" class="absolute top-[65%] left-[20%] z-2">
+      <div class="relative glass h-48 w-56 p-4">
+        <button @click="open = false"
+          class="absolute -top-2 -left-2 neon-button w-6 h-6 p-5 flex items-center justify-center"
+          style="color: #acacac;">x</button>
+        <div class="flex items-center justify-center h-full text-center">
+          <div>
+            <h4 class="font-bold text-3xl">Pioneiros</h4>
+            <p>3131asa</p>
+            <p>asas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div x-data="{ open: true}" x-show="open" class="absolute top-[10%] left-[30%] z-2">
+      <div class="relative glass h-48 w-56 p-4">
+        <button @click="open = false"
+          class="absolute -top-2 -left-2 neon-button w-6 h-6 p-5 flex items-center justify-center"
+          style="color: #acacac;">x</button>
+        <div class="flex items-center justify-center h-full text-center">
+          <div>
+            <h4 class="font-bold text-3xl">Pioneiros</h4>
+            <p>3131asa</p>
+            <p>asas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section x-data="{ 
+    activeStep: 0, 
+    show1: true, 
+    show2: true, 
+    show3: true, 
+    show4: true 
+  }" x-intersect:enter="
+    window.addEventListener('scroll', () => {
+      const section = $el;
+      const rect = section.getBoundingClientRect();
+      const scrollPercent = Math.max(0, Math.min(1, -rect.top / (section.offsetHeight - window.innerHeight)));
+
+      if (scrollPercent < 0.20) {
+        activeStep = 0;
+      } else if (scrollPercent < 0.40) {
+        activeStep = 1;
+      } else if (scrollPercent < 0.60) {
+        activeStep = 2;
+      } else if (scrollPercent < 0.80) {
+        activeStep = 3;
+      } else {
+        activeStep = 4;
+      }
+    })
+  " x-intersect:leave="activeStep = 0; show1 = true; show2 = true; show3 = true; show4 = true;" class="relative"
+    style="height: 300vh;">
+    <div class="sticky top-0 h-screen w-full overflow-hidden">
+
+      <div class="relative w-full h-full">
+
+        <div class="absolute inset-0 flex items-center justify-center z-10">
+          <h1 class="tracking-widest text-start text-[8rem] font-bold"
+            style="line-height: .9; letter-spacing: .1px !important;">
+            confiança<br>comprovada
+          </h1>
+        </div>
+
+        <div x-show="activeStep >= 1 && show1" x-transition:enter="transition ease-out duration-500"
+          x-transition:enter-start="opacity-0 transform scale-90"
+          x-transition:enter-end="opacity-100 transform scale-100" class="absolute top-[15%] left-[26%] z-20">
+          <div class="relative glass h-48 w-56 p-4">
+            <button @click="show1 = false"
+              class="absolute -top-2 -left-2 neon-button w-6 h-6 p-5 flex items-center justify-center"
+              style="color: #acacac;">X</button>
+            <div class="flex items-center justify-center h-full text-center">
+              <div>
+                <h4 class="font-bold text-6xl">3.6Mi</h4>
+                <p class="font-light text-sm px-6">de legislações monitoradas</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div x-show="activeStep >= 2 && show2" x-transition:enter="transition ease-out duration-500"
+          x-transition:enter-start="opacity-0 transform scale-90"
+          x-transition:enter-end="opacity-100 transform scale-100" class="absolute top-[20%] right-[23%] z-20">
+          <div class="relative green h-48 w-56 p-4">
+            <button @click="show2 = false"
+              class="absolute -top-2 -left-2 neon-button w-6 h-6 p-5 flex items-center justify-center"
+              style="color: #acacac; background-color: black;">x</button>
+            <div class="flex items-center justify-center h-full text-center">
+              <div>
+                <h4 class="font-bold text-6xl">5.245</h4>
+                <p class="font-light text-sm px-6">Clientes confiam na Legnet</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div x-show="activeStep >= 3 && show3" x-transition:enter="transition ease-out duration-500"
+          x-transition:enter-start="opacity-0 transform scale-90"
+          x-transition:enter-end="opacity-100 transform scale-100" class="absolute top-[60%] left-[20%] z-20">
+          <div class="relative glass h-48 w-56 p-4">
+            <button @click="show3 = false"
+              class="absolute -top-2 -left-2 neon-button w-6 h-6 p-5 flex items-center justify-center"
+              style="color: #acacac;">x</button>
+            <div class="flex items-center justify-center h-full text-center">
+              <div>
+                <h4 class="font-bold text-6xl">90%</h4>
+                <p class="font-light text-sm px-6">Reduza até 90% do tempo em processos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div x-show="activeStep >= 4 && show4" x-transition:enter="transition ease-out duration-500"
+          x-transition:enter-start="opacity-0 transform scale-90"
+          x-transition:enter-end="opacity-100 transform scale-100" class="absolute top-[70%] left-[50%] z-20">
+          <div class="relative black h-48 w-56 p-4">
+            <button @click="show4 = false"
+              class="absolute -top-2 -left-2 neon-button w-6 h-6 p-5 flex items-center justify-center"
+              style="color: #acacac;">x</button>
+            <div class="flex items-center text-white justify-center h-full text-center">
+              <div>
+                <h4 class="font-bold text-6xl">65%</h4>
+                <p class="font-light text-sm px-6">Redução em auditorias</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-white text-center mb-12">Nossos Clientes</h2>
+
+      <div class="logo-carousel">
+        <div class="logo-track">
+          <div class="logo-slide">
+            <img src="./assets/logo_tigre.png" alt="Cliente 1" />
+          </div>
+          <div class="logo-slide">
+            <img src="./assets/logo_volvo.png" alt="Cliente 2" />
+          </div>
+          <div class="logo-slide">
+            <img src="./assets/logo_raizen.png" alt="Cliente 3" />
+          </div>
+          <div class="logo-slide">
+            <img src="./assets/logo_coca_cola.png" alt="Cliente 4" />
+          </div>
+          <div class="logo-slide">
+            <img src="./assets/logo_abengoa.png" alt="Cliente 5" />
+          </div>
+
+          <div class="logo-slide">
+            <img src="./assets/logo_tigre.png" alt="Cliente 1" />
+          </div>
+          <div class="logo-slide">
+            <img src="./assets/logo_volvo.png" alt="Cliente 2" />
+          </div>
+          <div class="logo-slide">
+            <img src="./assets/logo_raizen.png" alt="Cliente 3" />
+          </div>
+          <div class="logo-slide">
+            <img src="./assets/logo_coca_cola.png" alt="Cliente 4" />
+          </div>
+          <div class="logo-slide">
+            <img src="./assets/logo_abengoa.png" alt="Cliente 5" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div x-data="{ open: true}" class="fixed bottom-24 right-4 z-10 floating-video-container" x-show="open">
+    <div class="relative">
+      <video width="100%" height="100%" style="height: 280px; width: 180px; border-radius: 48px !important;" controls
+        controlsList="nodownload" disablePictureInPicture autoPlay loop muted playsInline
+        class="object-cover shadow-lg">
+        <source src="./assets/criativo_02_vertical.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeos.
+      </video>
+      <button @click="open = false"
+        class="absolute -top-2 -right-2 bg-gray-800 text-white rounded-full w-6 h-6 p-1 flex items-center justify-center cursor-pointer">
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+    <a href="https://wa.me/5521997279076" target="_blank"
+      style="color: black !important; border-radius: 48px; display: flex !important;" rel="noopener noreferrer"
+      class="whatsapp-floating-button mt-2 flex items-center justify-center gap-2 bg-[#c5ff00] text-black font-medium py-2 px-4 shadow-lg hover:shadow-xl transition-all">
+      <i class="bi bi-telephone"></i>
+      WhatsApp
+    </a>
+  </div>
+
+  <section class="container mx-auto flex justify-center my-16">
+    <iframe width="1160px" height="653px" class="rounded-2xl"
+      src="https://www.youtube.com/embed/bWTlU5edVrI?autoplay=1&mute=1&controls=1&rel=0&loop=1&playlist=bWTlU5edVrI&modestbranding=1&showinfo=0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+      frameborder="0"></iframe>
+  </section>
+
+  <div x-data="{
+            currentIndex: 0,
+            itemsPerPage: 1,
+            centerOffset: 0,
+            touchStartX: 0,
+            items: [
+                { year: '2020', day: '15', month: 'Jan', title: 'Início da Universidade', short_desc: 'Começou uma nova jornada acadêmica, cheia de desafios e descobertas.', full_desc: 'Começou uma nova jornada acadêmica, cheia de desafios e descobertas na área de tecnologia. Este foi o primeiro passo para uma carreira promissora.', icon: 'fas fa-graduation-cap', image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=250&fit=crop', tags: ['Educação', 'Tecnologia'] },
+                { year: '2021', day: '22', month: 'Jun', title: 'Primeiro Estágio', short_desc: 'Primeira experiência profissional com metodologias ágeis.', full_desc: 'Primeira experiência profissional em uma empresa de desenvolvimento web. Aprendizado intensivo em tecnologias modernas e metodologias ágeis.', icon: 'fas fa-briefcase', image: 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=250&fit=crop', tags: ['Estágio', 'Web Dev'] },
+                { year: '2022', day: '10', month: 'Dez', title: 'Formatura', short_desc: 'Conclusão do curso superior com honras, abrindo novas oportunidades.', full_desc: 'Conclusão do curso superior com honras. Um marco importante que abriu portas para novas oportunidades no mercado de trabalho.', icon: 'fas fa-medal', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop', tags: ['Conquista', 'Diploma'] },
+                { year: '2023', day: '05', month: 'Mar', title: 'Primeiro Emprego', short_desc: 'Contratação como desenvolvedor full-stack em uma startup inovadora.', full_desc: 'Contratação como desenvolvedor full-stack em uma startup inovadora. Início de uma carreira promissora com projetos desafiadores.', icon: 'fas fa-rocket', image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=250&fit=crop', tags: ['Full-Stack', 'Startup'] },
+                { year: '2024', day: '18', month: 'Set', title: 'Promoção', short_desc: 'Promoção para líder técnico da equipe por excelente desempenho.', full_desc: 'Promoção para líder técnico da equipe. Reconhecimento pelo excelente trabalho e dedicação aos projetos da empresa.', icon: 'fas fa-crown', image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop', tags: ['Liderança', 'Promoção'] },
+                { year: '2025', day: '01', month: 'Jan', title: 'Novos Projetos', short_desc: 'Início de projetos ambiciosos e inovadores para o futuro.', full_desc: 'Início de novos projetos ambiciosos e inovadores. O futuro promete grandes conquistas e realizações profissionais.', icon: 'fas fa-lightbulb', image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=250&fit=crop', tags: ['Inovação', 'Futuro'] },
+            ],
+            init() {
+                this.$nextTick(() => { this.updateLayout(); });
+                window.addEventListener('resize', () => this.updateLayout());
+            },
+            updateLayout() {
+                this.itemsPerPage = this.calculateItemsPerPage();
+                if (this.$refs.timelineTrack) {
+                    const trackWidth = this.$refs.timelineTrack.offsetWidth;
+                    const itemWidth = trackWidth / this.itemsPerPage;
+                    this.centerOffset = (trackWidth - itemWidth) / 2;
+                }
+            },
+            calculateItemsPerPage() {
+                const width = window.innerWidth;
+                if (width >= 1280) return 4;
+                if (width >= 1024) return 3;
+                if (width >= 768) return 2;
+                return 1;
+            },
+            goToItem(index) {
+                if (index < 0) this.currentIndex = 0;
+                else if (index >= this.items.length) this.currentIndex = this.items.length - 1;
+                else this.currentIndex = index;
+            },
+            handleTouchStart(e) { this.touchStartX = e.touches[0].clientX; },
+            handleTouchEnd(e) {
+                const touchEndX = e.changedTouches[0].clientX;
+                const diff = this.touchStartX - touchEndX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) this.goToItem(this.currentIndex + 1);
+                    else this.goToItem(this.currentIndex - 1);
+                }
+            }
+        }" @keydown.window.arrow-left="goToItem(currentIndex - 1)"
+    @keydown.window.arrow-right="goToItem(currentIndex + 1)" @keydown.window.home="goToItem(0)"
+    @keydown.window.end="goToItem(items.length - 1)" class="container mx-auto max-w-7xl px-4">
+    <h1 class="text-center text-4xl font-light text-gray-800 mb-10 tracking-wide">Timeline Horizontal</h1>
+
+    <div class="relative">
+
+      <div class="absolute top-1/2 -translate-y-1/2 w-full flex justify-between z-20 pointer-events-none">
+        <button @click="goToItem(currentIndex - 1)" :disabled="currentIndex === 0"
+          class="pointer-events-auto -ml-5 md:ml-0 w-12 h-12 rounded-full bg-white/50 backdrop-blur-md border border-white/30 shadow-lg text-gray-700 text-lg cursor-pointer transition-all duration-300 flex items-center justify-center hover:bg-lime-400 hover:scale-105 active:scale-95"
+          :class="{'opacity-50 cursor-not-allowed': currentIndex === 0}">
+          <i class="bi bi-arrow-left"></i>
+        </button>
+        <button @click="goToItem(currentIndex + 1)" :disabled="currentIndex === items.length - 1"
+          class="pointer-events-auto -mr-5 md:mr-0 w-12 h-12 rounded-full bg-white/50 backdrop-blur-md border border-white/30 shadow-lg text-gray-700 text-lg cursor-pointer transition-all duration-300 flex items-center justify-center hover:bg-lime-400 hover:scale-105 active:scale-95"
+          :class="{'opacity-50 cursor-not-allowed': currentIndex === items.length - 1}">
+          <i class="bi bi-arrow-right"></i>
+        </button>
+      </div>
+
+      <div class="overflow-hidden">
+        <div class="flex transition-transform duration-500 ease-in-out py-5 mb-8 relative"
+          :style="`transform: translateX(calc(-${currentIndex} * (100% / ${itemsPerPage}) + ${centerOffset}px))`"
+          x-ref="timelineTrack" @touchstart="handleTouchStart" @touchend="handleTouchEnd">
+          <div
+            class="absolute bottom-[-60px] left-12 right-12 h-1 bg-gradient-to-r from-lime-400 to-lime-500 rounded-full z-0">
+          </div>
+
+          <template x-for="(item, index) in items" :key="index">
+            <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 transition-all duration-300 ease-in-out"
+              :class="{ 'opacity-100 scale-100': currentIndex === index, 'opacity-60 scale-90': currentIndex !== index }"
+              @click="goToItem(index)" :style="`flex-basis: calc(100% / ${itemsPerPage})`">
+              <div class="relative">
+                <div class="absolute bottom-[-60px] left-1/2 -translate-x-1/2 w-0.5 h-10 bg-gray-400 z-10"></div>
+                <div class="absolute bottom-[-80px] left-1/2 -translate-x-1/2 w-2 h-2 bg-lime-400 rounded-full z-20"
+                  :class="{'ring-4 ring-gray-100': currentIndex === index}"></div>
+              </div>
+
+              <div
+                class="relative h-[450px] rounded-3xl overflow-hidden bg-white/30 backdrop-blur-lg border border-white/20 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl">
+                <div class="relative h-[200px] overflow-hidden">
+                  <img :src="item.image" :alt="item.title"
+                    class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105">
+                  <div
+                    class="absolute top-4 left-4 w-16 h-16 rounded-full bg-white/70 backdrop-blur-sm border border-white/30 shadow-md flex flex-col items-center justify-center z-10">
+                    <span class="text-2xl font-bold text-gray-800 leading-none" x-text="item.day"></span>
+                    <span class="text-xs font-medium text-gray-600 uppercase tracking-wider" x-text="item.month"></span>
+                  </div>
+                  <div
+                    class="absolute top-4 right-4 w-10 h-10 rounded-full bg-lime-400 flex items-center justify-center text-gray-800 text-xl shadow-md z-10">
+                    <i :class="item.icon"></i>
+                  </div>
+                </div>
+                <div class="p-5 flex flex-col flex-grow">
+                  <h3 class="text-2xl font-semibold text-gray-800 mb-2" x-text="item.title"></h3>
+                  <p class="text-gray-600 mb-4 flex-grow" x-text="item.short_desc"></p>
+                  <div class="flex flex-wrap gap-2">
+                    <template x-for="tag in item.tags" :key="tag">
+                      <span class="text-xs text-gray-700 bg-white/40 border border-white/20 rounded-full px-3 py-1"
+                        x-text="tag"></span>
+                    </template>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <div class="px-5">
+        <div class="bg-gray-300 h-1 rounded-full relative mb-3">
+          <div class="bg-lime-400 h-full rounded-full transition-all duration-500"
+            :style="`width: ${(currentIndex / (items.length - 1)) * 100}%`"></div>
+        </div>
+        <div class="flex justify-between overflow-x-auto pb-2">
+          <template x-for="(item, index) in items" :key="index">
+            <button @click="goToItem(index)"
+              class="text-sm text-gray-600 whitespace-nowrap px-3 py-1 rounded-lg transition-colors duration-300"
+              :class="{ '!bg-lime-400 !text-gray-800 font-medium': currentIndex === index }"
+              x-text="item.year"></button>
+          </template>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="container mx-auto flex justify-center">
+    <img width="800px" height="500" src="./assets/equipe_multidisciplinar.png" alt="Equipe">
+  </section>
+
+  <section class="container mx-auto">
+    <video class="rounded-[40px] background-contain" src="./assets/video_bolinhas.mp4" muted disablePictureInPicture
+      autoplay loop></video>
+  </section>
+
+  <section class="container mx-auto">
+    <img src="./assets/cta.png" alt="Agende sua demonstração">
+  </section>
+
+  <section class="container mx-auto flex justify-center">
+    <button class="neon-button p-6">QUERO MINHA DEMONSTRAÇÃO GRATUITA</button>
+  </section>
+
+  <section class="overflow-hidden my-16">
+    <div x-data="{
+slides: [
+  {
+    title: 'AGILE',
+    text: 'AGILE. Gerenciador de requisitos legais ágil e eficiente. Otimiza o processo de conformidade legal de forma eficaz.',
+    bgColor: '#d0f702',
+    textColor: '#000000',
+    bgColorDark: '#b2d900',
+    textColorDark: '#000000'
+  },
+  {
+    title: 'GDOC',
+    text: 'GDOC. Gerenciador de documentos precisa. Gerencia documentos, revisão, e distribuição segura.',
+    bgColor: '#2d2d2d',
+    textColor: '#FFFFFF',
+    bgColorDark: '#0f0f0f',
+    textColorDark: '#FFFFFF'
+
+  },
+  {
+    id: 3,
+    title: 'GNC',
+    text: 'GNC. Gerenciador de não-conformidades imbatível. Gerencia não conformidades e planos de ação.',
+    bgColor: '#393939',
+    textColor: '#FFFFFF',
+    bgColorDark: '#1b1b1b',
+    textColorDark: '#FFFFFF'
+  },
+  {
+    id: 4,
+    title: 'GMUD',
+    text: 'GMUD. Gerenciador de mudanças eficaz. Gerencia e controla mudanças.',
+    bgColor: '#1f1f1f',
+    textColor: '#FFFFFF',
+    bgColorDark: '#010101',
+    textColorDark: '#FFFFFF'
+  },
+  {
+    id: 5,
+    title: 'GAUD',
+    text: 'GAUD. Gerenciador de auditoria detalhado. Ferramenta para gestão e acompanhamento de auditorias.',
+    bgColor: '#4b4b4b',
+    textColor: '#FFFFFF',
+    bgColorDark: '#2d2d2d',
+    textColorDark: '#FFFFFF'
+  },
+  {
+    id: 6,
+    title: 'GLIC',
+    text: 'GLIC. Gerenciador de licenças acurado. Software de gerenciamento de licenças e conformidade.',
+    bgColor: '#2d2d2d',
+    textColor: '#FFFFFF',
+    bgColorDark: '#0f0f0f',
+    textColorDark: '#FFFFFF'
+  },
+  {
+    id: 7,
+    title: 'GIA',
+    text: 'GIA. Gestão Integrada de Ações abrangente. Ferramenta que centraliza o acompanhamento de ações de todos os sistemas contratados.',
+    bgColor: '#d0f702',
+    textColor: '#000000',
+    bgColorDark: '#b2d900',
+    textColorDark: '#000000'
+  },
+  {
+    id: 8,
+    title: 'GFOR',
+    text: 'GFOR. Gerenciador de fornecedores completo. Sistema para gestão e avaliação de fornecedores.',
+    bgColor: '#393939',
+    textColor: '#FFFFFF',
+    bgColorDark: '#1b1b1b',
+    textColorDark: '#FFFFFF'
+  },
+  {
+    id: 9,
+    title: 'GOR',
+    text: 'GOR. Gerenciador de Outros Requisitos detalhado. Ferramenta para o cadastro e gestão de requisitos diversos, como normas, contratos e convenções.',
+    bgColor: '#1f1f1f',
+    textColor: '#FFFFFF',
+    bgColorDark: '#010101',
+    textColorDark: '#FFFFFF'
+  },
+  {
+    id: 10,
+    title: 'GRISCO',
+    text: 'GRISCO. Gerenciador de Riscos robusto. Ferramenta de gestão de riscos que identifica, analisa e avalia os riscos nos processos, produtos e serviços da organização.',
+    bgColor: '#4b4b4b',
+    textColor: '#FFFFFF',
+    bgColorDark: '#2d2d2d',
+    textColorDark: '#FFFFFF'
+  },
+  {
+    id: 11,
+    title: 'GCORE',
+    text: 'GCORE. Gerenciamento de resíduos Completo. Sistema de gestão de resíduos que controla e monitora desde a geração até a destinação final, assegurando conformidade com as regulamentações.',
+    bgColor: '#2d2d2d',
+    textColor: '#FFFFFF',
+    bgColorDark: '#0f0f0f',
+    textColorDark: '#FFFFFF'
+  },
+  {
+    id: 12,
+    title: 'GOM',
+    text: 'GOM. Gerenciamento de Objetivos e Metas estruturado. Ferramenta que permite a definição, acompanhamento e análise de objetivos e metas.',
+    bgColor: '#d0f702',
+    textColor: '#000000',
+    bgColorDark: '#b2d900',
+    textColorDark: '#000000'
+  },
+  {
+    id: 13,
+    title: 'GEATA',
+    text: 'GEATA. Gerenciador de Atas de reunião eficiente. Ferramenta para o cadastro de atas de reunião e seus participantes.',
+    bgColor: '#393939',
+    textColor: '#FFFFFF',
+    bgColorDark: '#1b1b1b',
+    textColorDark: '#FFFFFF'
+  },
+  {
+    id: 14,
+    title: 'LAIPR',
+    text: 'LAIPR. Levantamento de Aspectos, Impactos, Perigos e Riscos Eficiente. Sistema para integrar os Requisitos Legais com os Aspectos, Impactos, Perigos e Riscos de um empreendimento.',
+    bgColor: '#1f1f1f',
+    textColor: '#FFFFFF',
+    bgColorDark: '#010101',
+    textColorDark: '#FFFFFF'
+  },
+  {
+    id: 15,
+    title: 'GRO-PGR',
+    text: 'GRO-PGR. Ferramenta de gestão de riscos que atende à NR 1. Identifica, avalia e controla riscos ocupacionais, associa-os a GHE e gera relatórios gráficos e estatísticas.',
+    bgColor: '#4b4b4b',
+    textColor: '#FFFFFF',
+    bgColorDark: '#2d2d2d',
+    textColorDark: '#FFFFFF'
+  },
+  {
+    id: 16,
+    title: 'GFISPQ',
+    text: 'GIFSPQ. Gerenciador de fichas de informação e segurança de produtos químicos. Ferramenta para gerenciamento de FISPQs, que controla prazos de validade e revisões periódicas dessas fichas.',
+    bgColor: '#2d2d2d',
+    textColor: '#FFFFFF',
+    bgColorDark: '#0f0f0f',
+    textColorDark: '#FFFFFF'
+  },
+  {
+    id: 17,
+    title: 'MÓDULO BI',
+    text: 'MÓDULO BI. É uma ferramenta que integra a API do LEGNET ao Power BI, facilitando a gestão e visualização de dados.',
+    bgColor: '#d0f702',
+    textColor: '#000000',
+    bgColorDark: '#b2d900',
+    textColorDark: '#000000'
+  },
+  {
+    id: 18,
+    title: 'GERGO',
+    text: 'GERCO. Gerenciador de Ergonomia. Ferramenta de Gestão Ergonômica que facilita a criação de Laudos Ergonômicos informatizados e indicadores para monitorar ações ergonômicas.',
+    bgColor: '#393939',
+    textColor: '#FFFFFF',
+    bgColorDark: '#1b1b1b',
+    textColorDark: '#FFFFFF'
+  }
+],
+        displaySlides: [],
+        activeIndex: 1,
+        isAnimating: false,
+        transitionDuration: 400,
+        slideWidth: 30,
+        offsetLateral: 10,
+
+        init() {
+            this.displaySlides = [this.slides[this.slides.length - 1], ...this.slides, this.slides[0]];
+        },
+
+        calculateTransform() {
+            let centeringOffset = (100 - this.slideWidth) / 2;
+            let totalShift = this.activeIndex * this.slideWidth;
+            return `translateX(calc(${centeringOffset}% - ${totalShift}% + ${this.offsetLateral}%))`;
+        },
+
+        next() {
+            if (this.isAnimating) return;
+            this.isAnimating = true;
+            this.activeIndex++;
+
+            setTimeout(() => {
+                if (this.activeIndex === this.displaySlides.length - 1) {
+                    this.$refs.slidesContainer.style.transition = 'none';
+                    this.activeIndex = 1;
+                    this.$nextTick(() => {
+                        this.$refs.slidesContainer.style.transition = `transform ${this.transitionDuration}ms ease-in-out`;
+                    });
+                }
+                this.isAnimating = false;
+            }, this.transitionDuration);
+        },
+
+        prev() {
+            if (this.isAnimating) return;
+            this.isAnimating = true;
+            this.activeIndex--;
+
+            setTimeout(() => {
+                if (this.activeIndex === 0) {
+                    this.$refs.slidesContainer.style.transition = 'none';
+                    this.activeIndex = this.displaySlides.length - 2;
+                    this.$nextTick(() => {
+                        this.$refs.slidesContainer.style.transition = `transform ${this.transitionDuration}ms ease-in-out`;
+                    });
+                }
+                this.isAnimating = false;
+            }, this.transitionDuration);
+        }
+    }" x-init="init()" class="relative">
+
+      <div x-ref="slidesContainer" class="flex items-stretch"
+        :style="{ transform: calculateTransform(), transition: `transform ${transitionDuration}ms ease-in-out` }">
+        <template x-for="(slide, index) in displaySlides" :key="index">
+
+          <div class="px-2 flex-shrink-0 flex flex-col" :style="`width: ${slideWidth}%`">
+
+            <div class="rounded-[40px] grid grid-rows-[auto_1fr] w-full h-full"
+              :style="`background-color: ${slide.bgColor}; color: ${slide.textColor}`">
+
+              <h1 class="text-center p-8 text-2xl" x-text="slide.title"></h1>
+
+              <div class="rounded-[40px] px-16 pt-8 pb-16 gap-8 flex flex-col justify-between w-full"
+                :style="`background-color: ${slide.bgColorDark}; color: ${slide.textColorDark}`">
+                <p class="text-justify" x-text="slide.text"></p>
+                <div class="flex justify-end">
+                  <button class="glass-button px-6 py-3">
+                    <i class="bi bi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <div class="absolute left-[73%] top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center gap-2">
+        <button @click="prev()" class="glass-button p-6">
+          <i class="bi bi-arrow-left"></i>
+        </button>
+        <button @click="next()" class="glass-button p-6">
+          <i class="bi bi-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="overflow-hidden my-16">
+    <div x-data="{
+slides: [
+  {
+    id: 1,
+    title: 'Auditoria Remota ou Presencial',
+    text: 'Serviço de auditoria legal para garantir conformidade, adaptado à sua necessidade.',
+    bgColor: 'rgba(0, 0, 0, 0.88)', 
+    textColor: '#FFFFFF',
+    bgColorDark: '#000000',
+    textColorDark: '#FFFFFF'
+  },
+  {
+    id: 2,
+    title: 'Gestão de Requisitos Legais',
+    text: 'Gerenciamento eficiente de normas e obrigações legais.',
+    bgColor: 'rgba(208, 247, 2, 0.75)',
+    textColor: '#000000',
+    bgColorDark: '#d0f702',
+    textColorDark: '#000000'
+  },
+  {
+    id: 3,
+    title: 'Levantamento de Perigos e Riscos',
+    text: 'Ações programadas para eliminar e minimizar erros e danos.',
+    bgColor: 'rgba(57, 57, 57, 0.88)',
+    textColor: '#FFFFFF',
+    bgColorDark: '#393939',
+    textColorDark: '#FFFFFF'
+  },
+  {
+    id: 4,
+    title: 'Licenciamento Ambiental',
+    text: 'Suporte Técnico em todas as fases do Processo de Licenciamento Ambiental.',
+    bgColor: 'rgba(31, 31, 31, 0.88)',
+    textColor: '#FFFFFF',
+    bgColorDark: '#1f1f1f',
+    textColorDark: '#FFFFFF'
+  },
+  {
+    id: 5,
+    title: 'Licenciamento para Produtos Controlados',
+    text: 'Descomplicação na Gestão de Produtos Controlados.',
+    bgColor: 'rgba(75, 75, 75, 0.88)',
+    textColor: '#FFFFFF',
+    bgColorDark: '#4b4b4b',
+    textColorDark: '#FFFFFF'
+  },
+  {
+    id: 6,
+    title: 'Levantamento de Aspectos e Impactos',
+    text: 'Integração eficiente dos aspectos e impactos ambientais.',
+    bgColor: 'rgba(0, 0, 0, 0.88)',
+    textColor: '#FFFFFF',
+    bgColorDark: '#000000',
+    textColorDark: '#FFFFFF'
+  },
+  {
+    id: 7,
+    title: 'Terceirização da Gestão (Outsourcing)',
+    text: 'Terceirização da Gestão de Requisitos Legais e Normativos/ISO.',
+    bgColor: 'rgba(208, 247, 2, 0.75)',
+    textColor: '#000000',
+    bgColorDark: '#d0f702',
+    textColorDark: '#000000'
+  },
+  {
+    id: 8,
+    title: 'Avaliação de Requisitos Legais',
+    text: 'A avaliação de obrigações dos requisitos legais é um processo no qual são analisados e revisados os requisitos legais aplicáveis a uma empresa, considerando as normas e regulamentações vigentes, como NBR ISO 9001, ISO 14001 e ISO 45001.',
+    bgColor: 'rgba(57, 57, 57, 0.88)',
+    textColor: '#FFFFFF',
+    bgColorDark: '#393939',
+    textColorDark: '#FFFFFF'
+  },
+  {
+    id: 9,
+    title: 'Implantação de Certificação ISO',
+    text: 'Conte com a equipe especializada da Legnet para a implantação das principais certificações ISO do mercado como a ISO 9001, ISO 14001, ISO 45001 dentre outras.',
+    bgColor: 'rgba(31, 31, 31, 0.88)',
+    textColor: '#FFFFFF',
+    bgColorDark: '#1f1f1f',
+    textColorDark: '#FFFFFF'
+  },
+  {
+    id: 10,
+    title: 'Certificação ISO 45001',
+    text: 'A certificação ISO 45001 comprova que a sua empresa atua de acordo com as diretrizes mais importantes em saúde e segurança no trabalho – SST.',
+    bgColor: 'rgba(75, 75, 75, 0.88)',
+    textColor: '#FFFFFF',
+    bgColorDark: '#4b4b4b',
+    textColorDark: '#FFFFFF'
+  }
+],
+        displaySlides: [],
+        activeIndex: 1,
+        isAnimating: false,
+        transitionDuration: 400,
+        slideWidth: 30,
+        offsetLateral: 10,
+
+        init() {
+            this.displaySlides = [this.slides[this.slides.length - 1], ...this.slides, this.slides[0]];
+        },
+
+        calculateTransform() {
+            let centeringOffset = (100 - this.slideWidth) / 2;
+            let totalShift = this.activeIndex * this.slideWidth;
+            return `translateX(calc(${centeringOffset}% - ${totalShift}% + ${this.offsetLateral}%))`;
+        },
+
+        next() {
+            if (this.isAnimating) return;
+            this.isAnimating = true;
+            this.activeIndex++;
+
+            setTimeout(() => {
+                if (this.activeIndex === this.displaySlides.length - 1) {
+                    this.$refs.slidesContainer.style.transition = 'none';
+                    this.activeIndex = 1;
+                    this.$nextTick(() => {
+                        this.$refs.slidesContainer.style.transition = `transform ${this.transitionDuration}ms ease-in-out`;
+                    });
+                }
+                this.isAnimating = false;
+            }, this.transitionDuration);
+        },
+
+        prev() {
+            if (this.isAnimating) return;
+            this.isAnimating = true;
+            this.activeIndex--;
+
+            setTimeout(() => {
+                if (this.activeIndex === 0) {
+                    this.$refs.slidesContainer.style.transition = 'none';
+                    this.activeIndex = this.displaySlides.length - 2;
+                    this.$nextTick(() => {
+                        this.$refs.slidesContainer.style.transition = `transform ${this.transitionDuration}ms ease-in-out`;
+                    });
+                }
+                this.isAnimating = false;
+            }, this.transitionDuration);
+        }
+    }" x-init="init()" class="relative">
+
+      <div x-ref="slidesContainer" class="flex items-stretch"
+        :style="{ transform: calculateTransform(), transition: `transform ${transitionDuration}ms ease-in-out` }">
+        <template x-for="(slide, index) in displaySlides" :key="index">
+
+          <div class="px-2 flex-shrink-0 flex flex-col" :style="`width: ${slideWidth}%`">
+
+            <div class="rounded-[40px] grid grid-rows-[auto_1fr] w-full h-full"
+              :style="`background-color: ${slide.bgColor}; color: ${slide.textColor}`">
+
+              <h1 class="text-center p-8 text-2xl" x-text="slide.title"></h1>
+
+              <div class="rounded-[40px] px-16 pt-8 pb-16 gap-6 flex flex-col justify-between w-full"
+                :style="`background-color: ${slide.bgColorDark}; color: ${slide.textColorDark}`">
+                <p class="text-justify" x-text="slide.text"></p>
+                <div class="flex justify-end">
+                  <button class="glass-button px-6 py-3">
+                    <i class="bi bi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <div class="absolute left-[73%] top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center gap-2">
+        <button @click="prev()" class="glass-button p-6">
+          <i class="bi bi-arrow-left"></i>
+        </button>
+        <button @click="next()" class="glass-button p-6">
+          <i class="bi bi-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#f5f5f5]">
+    <div class="container mx-auto px-4 pb-8 pt-8">
+      <div class="text-center">
+        <p class="text-gray-600 font-light">© 2025 Agile. Todos os direitos reservados.</p>
+      </div>
+    </div>
+    <div class="bg-[#c5ff00] py-4 sticky bottom-0 left-0 right-0 z-40 shadow-lg">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <p class="font-medium text-black">Precisa de ajuda? Fale conosco!</p>
+        <a href="https://wa.me/5521997279076" target="_blank" rel="noopener noreferrer"
+          class="bg-black text-white font-medium py-2 px-6 rounded-full flex items-center gap-2 hover:bg-gray-800 transition-colors">
+          <i class="bi bi-telephone"></i>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

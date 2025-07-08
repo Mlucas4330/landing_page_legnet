@@ -1,0 +1,197 @@
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 48px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: none;
+}
+
+.black {
+  background: black;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 48px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: none;
+}
+
+.green {
+  background: #c5ff00;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 48px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: none;
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, .200);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: none;
+}
+
+
+.active-glass-button {
+  background: rgb(0, 0, 0);
+  color: white;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: none;
+}
+
+.glass-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.neon-button {
+  background-color: #c5ff00;
+  color: #000;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.neon-button:hover {
+  box-shadow: 0 0 15px #c5ff00, 0 0 25px #c5ff00;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.neon-glow {
+  filter: drop-shadow(0 0 10px #c5ff00);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+p {
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Urbanist', sans-serif;
+  font-optical-sizing: auto;
+  background-color: #dfdfdf;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.underline {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #c5ff00;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.underline:hover::after {
+  transform: scaleX(1);
+}
+
+.access-button {
+  color: #c5ff00;
+  background-color: #333;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: none;
+}
+
+.access-button:hover {
+  background-color: #c5ff00;
+  color: black;
+}
+
+.logo-carousel {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.logo-track {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  width: calc(200px * 10);
+}
+
+.logo-slide {
+  width: 200px;
+  height: 100px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.logo-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(1.2);
+  transition: filter 0.3s ease;
+}
+
+.logo-slide img:hover {
+  filter: grayscale(0%) brightness(1);
+}
+
+.blog-post-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.blog-post {
+  transition: all 0.3s ease;
+}
+
+.blog-post:hover {
+  transform: translateY(-10px);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-200px * 5));
+  }
+}
