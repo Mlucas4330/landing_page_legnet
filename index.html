@@ -14,6 +14,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://fonts.cdnfonts.com/css/lufga" rel="stylesheet">
 </head>
 
 <body>
@@ -26,7 +27,7 @@
           <img src="./assets/icon_neon_legnet.png" alt="Legnet" class="neon-glow h-8 w-8" />
         </a>
 
-        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
           <button class="glass-button px-6 py-3 flex items-center gap-2"> Legnet <i
               class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
           </button>
@@ -42,7 +43,7 @@
           </div>
         </div>
 
-        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
           <button class="glass-button px-6 py-3 flex items-center gap-2"> Requisitos Legais <i
               class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
           </button>
@@ -54,27 +55,118 @@
           </div>
         </div>
 
-        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
           <button class="glass-button px-6 py-3 flex items-center gap-2"> Serviços <i
               class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
           </button>
-          <div x-show="open" x-transition class="absolute glass left-0 mt-3 flex gap-5 p-4 w-max">
+          <div x-show="open" x-transition class="absolute glass left-0 mt-3 flex gap-5 p-4">
+            <div>
+              <h4 class="text-lg text-center">Serviços Legnet</h4>
+              <div class="flex gap-4 mt-3">
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">Auditoria Remota ou Presencial</a>
+                  <a class="block px-4 py-2 underline" href="#">Terceirização da Gestão (Outsourcing)</a>
+                  <a class="block px-4 py-2 underline" href="#">Avaliação de Requisitos Legais</a>
+                  <a class="block px-4 py-2 underline" href="#">Implantação de Certificação ISO</a>
+                </div>
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">Licenciamento para Produtos Controlados</a>
+                  <a class="block px-4 py-2 underline" href="#">Licenciamento Ambiental</a>
+                  <a class="block px-4 py-2 underline" href="#">Licenciamento Ambiental de Base Operacional em
+                    Aeroportos</a>
+                  <a class="block px-4 py-2 underline" href="#">Levantamento de Aspetos e Impactos</a>
+                </div>
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">Levantamento de Perigos e Riscos</a>
+                  <a class="block px-4 py-2 underline" href="#">Treinamentos, Palesras e Workshops</a>
+                  <a class="block px-4 py-2 underline" href="#">Gap Analysis ISO 45001</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4 class="text-lg text-center">Certificações ISO</h4>
+              <div class="flex gap-4 mt-3">
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">ISO 9001 - Qualidade</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 14001 - Meio Ambiente</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 45001 - Saúde e Segurança do Trabalho</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 16001 / SA 8000 - Responsabilidade Social</a>
+                </div>
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">ISO 22000 / FSSC 22000 - Segurança Alimentar</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 39001 - Sistema de Seguança Viária</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 50001 - Energia</a>
+                  <a class="block px-4 py-2 underline" href="#">NBR 15401 - Turismo Sustentável</a>
+                </div>
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">NBR ISO 37001 / ISO 19600 - Compliance e
+                    Antissuborno</a>
+                  <a class="block px-4 py-2 underline" href="#">SASSMAQ</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
           <button class="glass-button px-6 py-3 flex items-center gap-2"> Softwares <i
               class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
           </button>
-          <div x-show="open" x-transition class="absolute glass left-0 mt-3 p-4 w-max">
+          <div x-show="open" x-transition class="absolute glass left-0 mt-3 p-4">
+            <h4 class="text-lg text-center">Softwares Legnet</h4>
+            <div class="flex gap-5 mt-5">
+              <div>
+                <a href="#" class="block px-4 py-2 underline">AGILE - Gerenciador de Requisitos Legais</a>
+                <a href="#" class="block px-4 py-2 underline">GLIC - Gerenciador de Licenças</a>
+                <a href="#" class="block px-4 py-2 underline">GNC - Gerenciador de Não-Conformidados</a>
+                <a href="#" class="block px-4 py-2 underline">GEDOC - Gerenciador de Documentos</a>
+              </div>
+              <div>
+                <a href="#" class="block px-4 py-2 underline">GIA - Gerenciador Integrado de Ações</a>
+                <a href="#" class="block px-4 py-2 underline">GFOR - Gerenciador de Fornecedores</a>
+                <a href="#" class="block px-4 py-2 underline">GOR - Gestão de Outros Requisitos</a>
+                <a href="#" class="block px-4 py-2 underline">GRISCO - Gerenciador de Riscos</a>
+              </div>
+              <div>
+                <a href="#" class="block px-4 py-2 underline">GAUD - Gerenciador de Auditoria</a>
+                <a href="#" class="block px-4 py-2 underline">GMUD - Gerenciador de Mudanças</a>
+                <a href="#" class="block px-4 py-2 underline">GCORE - Gerenciamento de Resíduos</a>
+                <a href="#" class="block px-4 py-2 underline">GOM - Gerenciador de Objetivos e Metas</a>
+              </div>
+              <div>
+                <a href="#" class="block px-4 py-2 underline">GEATA - Gerenciador de Atas de Reunião</a>
+                <a href="#" class="block px-4 py-2 underline">LAIPR - Levantamento de Aspectos, Impactos, Perigos e
+                  Riscos</a>
+                <a href="#" class="block px-4 py-2 underline">GEROC - Gerenciador de Ocorrências</a>
+                <a href="#" class="block px-4 py-2 underline">GRO-PGR - Programa de Gerenciamento de Riscos</a>
+              </div>
+              <div>
+                <a href="#" class="block px-4 py-2 underline">GFISPQ - Gerenciador de FISPQ</a>
+                <a href="#" class="block px-4 py-2 underline">GERGO - Gerenciador de Ergonomia</a>
+                <a href="#" class="block px-4 py-2 underline">MÓDULO BI - Integre qualquer software Legnet ao Power
+                  BI</a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
           <button class="glass-button px-6 py-3 flex items-center gap-2"> EAD <i
               class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
           </button>
-          <div x-show="open" x-transition class="absolute glass mt-3 p-4 w-max">
+          <div x-show="open" x-transition class="absolute glass mt-3 p-4">
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Cursos Sobre Gestão de
+              Qualidade</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Cursos Sobre Meio
+              Ambiente</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Cursos Livres Sobre
+              Gestão</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Cursos Sobre Saúde e
+              Segurança
+              Ocupacional</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Meus Cursos</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Acessar</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Contato</a>
           </div>
         </div>
 
@@ -280,6 +372,79 @@
     </div>
   </section>
 
+  <section class="container mx-auto md:32 lg:px-48 mb-16">
+    <div x-data="{
+slides: [
+  {
+    id: 1,
+    title: 'Implantação Gratuita de Sistemas de Gestão Legal',
+    text: 'Implementação do sistema sem custos adicionais.',
+    bgColor: '#d0f702',
+    textColor: '#000000'
+  },
+  {
+    id: 2,
+    title: 'Tecnologia de IA para Compliance',
+    text: 'Utilize tecnologia avançada para gerenciar os requisitos legais',
+    bgColor: '#2d2d2d',
+    textColor: '#FFFFFF'
+  },
+  {
+    id: 3,
+    title: 'Reduza até 90% do tempo em processos.',
+    text: 'Em todo atendimento das legislações aplicáveis às atividades da empresa.',
+    bgColor: '#4b4b4b',
+    textColor: '#FFFFFF'
+  },
+  {
+    id: 4,
+    title: 'Atendimento ao cliente de forma customizada',
+    text: 'SLA-Tempo de resposta ao cliente superior a 98%.',
+    bgColor: '#2d2d2d',
+    textColor: '#FFFFFF'
+  },
+  {
+    id: 5,
+    title: 'Empresa certificada ISO (9001/14001/45001)',
+    text: 'Um produto certificado garante a qualidade dos processos e entrega final com controles sistemáticos.',
+    bgColor: '#d0f702',
+    textColor: '#000000'
+  },
+  {
+    id: 6,
+    title: 'Membro do Pacto Global da ONU',
+    text: 'Empresa que promove o desenvolvimento global responsável e a prática da Responsabilidade Social.',
+    bgColor: '#393939',
+    textColor: '#FFFFFF'
+  },
+    {
+    id: 7,
+    title: 'Monitoramento Diário',
+    text: 'Nossos profissionais realizam monitoramento contínuo das mudanças nas legislações, garantindo que sua empresa esteja sempre atualizada e evite grandes problemas.',
+    bgColor: '#393939',
+    textColor: '#FFFFFF'
+  },
+    {
+    id: 8,
+    title: 'Adequação Legal',
+    text: 'Fazemos a identificação automática de ações para a adequação legal da sua empresa em relação as principais certificações ISO, NBR e FSC.',
+    bgColor: '#a8a8a8',
+    textColor: '#FFFFFF'
+  }
+]}">
+
+      <div class="columns-2 gap-2">
+        <template x-for="(slide, index) in slides" :key="index">
+          <div class="p-8 mb-2 break-inside-avoid rounded-[40px]"
+            :style="`background-color: ${slide.bgColor}; color: ${slide.textColor}`">
+            <h1 class="text-2xl" x-text="slide.title"></h1>
+            <p :class="index % 2 === 0 ? 'py-8' : 'py-12'" x-text="slide.text"></p>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+
   <section class="py-16">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-white text-center mb-12">Nossos Clientes</h2>
@@ -343,7 +508,7 @@
     </a>
   </div>
 
-  <section class="container mx-auto flex justify-center my-16">
+  <section class="container mx-auto flex justify-center mb-16">
     <iframe width="1160px" height="653px" class="rounded-2xl"
       src="https://www.youtube.com/embed/bWTlU5edVrI?autoplay=1&mute=1&controls=1&rel=0&loop=1&playlist=bWTlU5edVrI&modestbranding=1&showinfo=0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
@@ -495,11 +660,11 @@
     <img src="./assets/cta.png" alt="Agende sua demonstração">
   </section>
 
-  <section class="container mx-auto flex justify-center">
+  <section class="container mx-auto flex justify-center mb-16">
     <button class="neon-button p-6">QUERO MINHA DEMONSTRAÇÃO GRATUITA</button>
   </section>
 
-  <section class="overflow-hidden my-16">
+  <section class="overflow-hidden mb-16">
     <div x-data="{
 slides: [
   {
@@ -672,7 +837,21 @@ slides: [
         offsetLateral: 10,
 
         init() {
+            this.updateSlideWidth();
             this.displaySlides = [this.slides[this.slides.length - 1], ...this.slides, this.slides[0]];
+        },
+
+        updateSlideWidth() {
+          const w = window.innerWidth;
+          if (w >= 1024) {
+            this.slideWidth = 30;
+          } else if (w >= 768) {
+            this.slideWidth = 40;
+            this.offsetLateral = 20;
+          } else {
+            this.slideWidth = 100;
+            this.offsetLateral = 0;
+          }
         },
 
         calculateTransform() {
@@ -752,7 +931,7 @@ slides: [
     </div>
   </section>
 
-  <section class="overflow-hidden my-16">
+  <section class="overflow-hidden mb-16">
     <div x-data="{
 slides: [
   {
@@ -854,7 +1033,21 @@ slides: [
         offsetLateral: 10,
 
         init() {
+            this.updateSlideWidth();
             this.displaySlides = [this.slides[this.slides.length - 1], ...this.slides, this.slides[0]];
+        },
+
+        updateSlideWidth() {
+          const w = window.innerWidth;
+          if (w >= 1024) {
+            this.slideWidth = 30;
+          } else if (w >= 768) {
+            this.slideWidth = 40;
+            this.offsetLateral = 20;
+          } else {
+            this.slideWidth = 100;
+            this.offsetLateral = 0;
+          }
         },
 
         calculateTransform() {
