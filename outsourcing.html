@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terceirização da Gestão (Outsourcing)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://fonts.cdnfonts.com/css/lufga" rel="stylesheet">
+</head>
+
+<body>
+  <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 z-50 p-4 w-full">
+    <div class="container relative mx-auto flex justify-between items-center">
+
+      <div class="hidden lg:flex gap-2 items-center">
+        <a href="index.html" class="glass-button p-3 flex items-center justify-center">
+          <img src="./assets/icon_neon_legnet.png" alt="Legnet" class="neon-glow h-8 w-8" />
+        </a>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> Legnet <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute glass items-center p-4 mt-3 flex gap-5 w-max">
+            <div class="p-4">
+              <a class="block underline" href="certificacoes.html">Certificações</a>
+              <a class="block underline mt-2" href="sobre_nos.html">Sobre nós</a>
+              <img class="mt-5 h-8 w-8" src="./assets/icon_neon_legnet.png" alt="Legnet">
+            </div>
+            <div class="p-4">
+              <iframe class="rounded-[40px]"
+                src="https://www.youtube.com/embed/bWTlU5edVrI?si=NCW7wg-4PLoTt42l"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> Requisitos Legais <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute glass mt-3 p-4 w-max">
+            <a href="agile.html" class="block px-4 py-2 underline">AGILE</a>
+            <a href="gor.html" class="block px-4 py-2 underline">GOR</a>
+            <a href="laipr.html" class="block px-4 py-2 underline">LAIPR</a>
+            <a href="modulo_bi.html" class="block px-4 py-2 underline">MÓDULO BI</a>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> Serviços <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute glass left-0 mt-3 flex gap-5 p-4">
+            <div>
+              <h4 class="text-lg text-center">Serviços Legnet</h4>
+              <div class="flex gap-4 mt-3">
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">Auditoria Remota ou Presencial</a>
+                  <a class="block px-4 py-2 underline" href="#">Terceirização da Gestão (Outsourcing)</a>
+                  <a class="block px-4 py-2 underline" href="#">Avaliação de Requisitos Legais</a>
+                  <a class="block px-4 py-2 underline" href="#">Implantação de Certificação ISO</a>
+                </div>
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">Licenciamento para Produtos Controlados</a>
+                  <a class="block px-4 py-2 underline" href="#">Licenciamento Ambiental</a>
+                  <a class="block px-4 py-2 underline" href="#">Licenciamento Ambiental de Base Operacional em
+                    Aeroportos</a>
+                  <a class="block px-4 py-2 underline" href="#">Levantamento de Aspetos e Impactos</a>
+                </div>
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">Levantamento de Perigos e Riscos</a>
+                  <a class="block px-4 py-2 underline" href="#">Treinamentos, Palesras e Workshops</a>
+                  <a class="block px-4 py-2 underline" href="#">Gap Analysis ISO 45001</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4 class="text-lg text-center">Certificações ISO</h4>
+              <div class="flex gap-4 mt-3">
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">ISO 9001 - Qualidade</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 14001 - Meio Ambiente</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 45001 - Saúde e Segurança do Trabalho</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 16001 / SA 8000 - Responsabilidade Social</a>
+                </div>
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">ISO 22000 / FSSC 22000 - Segurança Alimentar</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 39001 - Sistema de Seguança Viária</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 50001 - Energia</a>
+                  <a class="block px-4 py-2 underline" href="#">NBR 15401 - Turismo Sustentável</a>
+                </div>
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">NBR ISO 37001 / ISO 19600 - Compliance e
+                    Antissuborno</a>
+                  <a class="block px-4 py-2 underline" href="#">SASSMAQ</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> Softwares <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute glass left-0 mt-3 p-4">
+            <h4 class="text-lg text-center">Softwares Legnet</h4>
+            <div class="flex gap-5 mt-5">
+              <div>
+                <a href="#" class="block px-4 py-2 underline">AGILE - Gerenciador de Requisitos Legais</a>
+                <a href="#" class="block px-4 py-2 underline">GLIC - Gerenciador de Licenças</a>
+                <a href="#" class="block px-4 py-2 underline">GNC - Gerenciador de Não-Conformidados</a>
+                <a href="#" class="block px-4 py-2 underline">GEDOC - Gerenciador de Documentos</a>
+              </div>
+              <div>
+                <a href="#" class="block px-4 py-2 underline">GIA - Gerenciador Integrado de Ações</a>
+                <a href="#" class="block px-4 py-2 underline">GFOR - Gerenciador de Fornecedores</a>
+                <a href="#" class="block px-4 py-2 underline">GOR - Gestão de Outros Requisitos</a>
+                <a href="#" class="block px-4 py-2 underline">GRISCO - Gerenciador de Riscos</a>
+              </div>
+              <div>
+                <a href="#" class="block px-4 py-2 underline">GAUD - Gerenciador de Auditoria</a>
+                <a href="#" class="block px-4 py-2 underline">GMUD - Gerenciador de Mudanças</a>
+                <a href="#" class="block px-4 py-2 underline">GCORE - Gerenciamento de Resíduos</a>
+                <a href="#" class="block px-4 py-2 underline">GOM - Gerenciador de Objetivos e Metas</a>
+              </div>
+              <div>
+                <a href="#" class="block px-4 py-2 underline">GEATA - Gerenciador de Atas de Reunião</a>
+                <a href="#" class="block px-4 py-2 underline">LAIPR - Levantamento de Aspectos, Impactos, Perigos e
+                  Riscos</a>
+                <a href="#" class="block px-4 py-2 underline">GEROC - Gerenciador de Ocorrências</a>
+                <a href="#" class="block px-4 py-2 underline">GRO-PGR - Programa de Gerenciamento de Riscos</a>
+              </div>
+              <div>
+                <a href="#" class="block px-4 py-2 underline">GFISPQ - Gerenciador de FISPQ</a>
+                <a href="#" class="block px-4 py-2 underline">GERGO - Gerenciador de Ergonomia</a>
+                <a href="#" class="block px-4 py-2 underline">MÓDULO BI - Integre qualquer software Legnet ao Power
+                  BI</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> EAD <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute glass mt-3 p-4">
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Cursos Sobre Gestão de
+              Qualidade</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Cursos Sobre Meio
+              Ambiente</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Cursos Livres Sobre
+              Gestão</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Cursos Sobre Saúde e
+              Segurança
+              Ocupacional</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Meus Cursos</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Acessar</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Contato</a>
+          </div>
+        </div>
+
+        <a href="blog.html" target="_blank" class="glass-button px-6 py-3"> Blog </a>
+      </div>
+
+      <a href="index.html" class="lg:hidden glass-button p-3 flex items-center justify-center">
+        <img src="./assets/icon_neon_legnet.png" alt="Legnet" class="neon-glow h-8 w-8" />
+      </a>
+
+
+      <div class="flex gap-2 items-center">
+        <div class="hidden sm:flex gap-2">
+          <button class="access-button neon-button px-6 py-3"> Acessar Legnet </button>
+          <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+            <button class="neon-button px-6 py-3 font-medium flex items-center gap-2"> Peça Proposta <i
+                class="bi bi-caret-down transform transition-transform duration-300"
+                :class="{ 'rotate-180': open }"></i></button>
+            <div x-show="open" x-transition class="absolute glass mt-3 p-4">
+              <h4 class="text-lg text-center">Preencha seus dados</h4>
+              <form class="p-4">
+                <div class="mb-1">
+                  <label for="motivo">Motivo:</label><br>
+                  <select class="border-1 rounded-lg p-2 w-full" required name="motivo" id="motivo">
+                    <option value="">Selecione</option>
+                    <option value="Softwares Requisitos Legais">Softwares Requisitos Legais </option>
+                    <option value="Softwares de Gestão">Softwares de Gestão </option>
+                    <option value="Auditoria de Requisitos Legais">Auditoria de Requisitos Legais </option>
+                    <option value="Serviço de Consultoria Técnica">Serviço de Consultoria Técnica </option>
+                    <option value="EAD">EAD</option>
+                    <option value="Outras opções">Outras opções</option>
+                  </select>
+                </div>
+                <input class="mb-1 rounded-lg border-1 p-2" required type="text" name="nome" id="nome"
+                  placeholder="Seu Nome:">
+                <input class="mb-1 rounded-lg border-1 p-2" required type="email" name="email" id="email"
+                  placeholder="Seu melhor e-mail:">
+                <input class="mb-1 rounded-lg border-1 p-2" required type="text" name="telefone" id="telefone"
+                  placeholder="Telefone (com DDD):">
+                <input class="mb-1 rounded-lg border-1 p-2" required type="text" name="cnpj" id="cnpj"
+                  placeholder="CNPJ">
+                <textarea class="mb-1 rounded-lg border-1 p-2 w-full" style="resize: none;" name="solucao" id="solucao"
+                  placeholder="Descreva sua dúvida/solução:"></textarea>
+                <button class="neon-button px-6 py-3 w-full">Enviar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <button @click="mobileMenuOpen = !mobileMenuOpen"
+          class="lg:hidden glass-button px-6 py-3 flex items-center justify-center">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+
+      <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="transform -translate-x-full" x-transition:enter-end="transform translate-x-0"
+        x-transition:leave="transition ease-in duration-300" x-transition:leave-start="transform translate-x-0"
+        x-transition:leave-end="transform -translate-x-full"
+        class="fixed top-0 left-0 w-full h-full bg-white z-50 lg:hidden" @click.away="mobileMenuOpen = false">
+        <div class="flex justify-end p-4">
+          <button @click="mobileMenuOpen = false">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <nav class="flex flex-col items-center justify-center h-full -mt-16 text-xl space-y-4">
+          <div x-data="{ open: false }">
+            <button @click="open = !open" class="flex items-center gap-2 px-6 py-3">
+              Legnet <i class="bi bi-caret-down transition-transform" :class="{ 'rotate-180': open }"></i>
+            </button>
+            <div x-show="open" class="flex flex-col items-center text-base space-y-2 mt-2">
+              <a class="block underline" href="certificacoes.html">Certificações</a>
+              <a class="block underline" href="#">Sobre nós</a>
+            </div>
+          </div>
+
+          <div x-data="{ open: false }">
+            <button @click="open = !open" class="flex items-center gap-2 px-6 py-3">
+              Requisitos Legais <i class="bi bi-caret-down transition-transform" :class="{ 'rotate-180': open }"></i>
+            </button>
+            <div x-show="open" class="flex flex-col items-center text-base space-y-2 mt-2">
+              <a href="agile.html" class="block underline">AGILE</a>
+              <a href="gor.html" class="block underline">GOR</a>
+              <a href="laipr.html" class="block underline">LAIPR</a>
+              <a href="modulo_bi.html" class="block underline">MÓDULO BI</a>
+            </div>
+          </div>
+
+          <a href="blog.html" target="_blank" class="px-6 py-3">Blog</a>
+
+          <div class="flex flex-col gap-4 mt-8 pt-4">
+            <button class="access-button neon-button px-6 py-3"> Acessar Legnet </button>
+            <button class="neon-button px-6 py-3 font-medium"> Faça Proposta </button>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="container mx-auto my-16">
+    <div class="grid grid-cols-2 gap-6">
+
+      <div class="col-span-2 p-16 lg:p-32 rounded-[40px] bg-[#a8a8a8] text-[#FFFFFF]">
+        <h1 class="text-3xl">Gestão de Requisitos Legais</h1>
+        <h2 class="text-2xl italic">Terceirização da Gestão de Requisitos Legais e Normativos/ISO</h2>
+        <p class="py-8 text-xl text-justify">A Legnet criou este serviço para ajudar as empresas brasileiras a lidar
+          melhor com as leis que afetam seus negócios. Oferecemos suporte no levantamento, adaptação e acompanhamento
+          das leis que precisam ser seguidas.</p>
+        <button class="glass-button px-6 py-3">FAZER ORÇAMENTO</button>
+      </div>
+
+      <div class="col-span-2 p-16 lg:p-32 rounded-[40px] space-y-16 bg-[#d0f702]">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="border-2 rounded-3xl p-6">
+            <div class="flex items-center gap-6 pb-8">
+              <i class="bi bi-caret-right-fill"></i>
+              <h1 class="text-lg">Levantamento de Requisitos</h1>
+            </div>
+            <p class="text-justify">
+              Identificação das leis para garantir conformidade.
+            </p>
+          </div>
+          <div class="border-2 rounded-3xl p-6">
+            <div class="flex items-center gap-6 pb-8">
+              <i class="bi bi-caret-right-fill"></i>
+              <h1 class="text-lg">Adequação às Normas</h1>
+            </div>
+            <p class="text-justify">
+              Adaptação para atender exigências legais.
+            </p>
+          </div>
+          <div class="border-2 rounded-3xl p-6">
+            <div class="flex items-center gap-6 pb-8">
+              <i class="bi bi-caret-right-fill"></i>
+              <h1 class="text-lg">Monitoramento Contínuo</h1>
+            </div>
+            <p class="text-justify">
+              Acompanhamento e revisão das conformidades.
+            </p>
+          </div>
+          <div class="border-2 rounded-3xl p-6">
+            <div class="flex items-center gap-6 pb-8">
+              <i class="bi bi-caret-right-fill"></i>
+              <h1 class="text-lg">Suporte Especializado</h1>
+            </div>
+            <p class="text-justify">
+              Assistência na interpretação e implementação.
+            </p>
+          </div>
+        </div>
+        <h1 class="text-4xl text-center">Destaques na Gestão</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div>
+            <h3 class="text-3xl text-center pb-8">Redução de custos</h3>
+            <p class="text-lg text-justify">Economize recursos financeiros ao otimizar a conformidade legal.</p>
+          </div>
+          <div>
+            <h3 class="text-3xl text-center pb-8">Libere recursos internos</h3>
+            <p class="text-lg text-justify">Delegue tarefas de gestão legal para concentrar-se em atividades principais.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-3xl text-center pb-8">Acelere seu projeto</h3>
+            <p class="text-lg text-justify">Agilize o cumprimento de requisitos legais para acelerar iniciativas
+              estratégicas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-span-2 p-16 lg:p-32 rounded-[40px] space-y-8 bg-[#a8a8a8] text-[#FFFFFF]">
+        <h1 class="text-3xl text-center">Benefícios da Gestão de Requisitos Legais e Normativos/ISO</h1>
+        <p class="text-xl text-center">Otimize sua empresa com a terceirização da gestão de requisitos legais e
+          normativos, incluindo conformidade com as normas ISO. Conte com especialistas para garantir compliance
+          eficiente, permitindo que você se concentre no crescimento e na inovação dos seus negócios.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="flex items-center p-6 bg-black rounded-[40px] gap-6 text-white">
+            <i class="bi bi-caret-right-fill"></i>
+            <div class="space-y-2">
+              <h1>Atualização Mensal de Requisitos Legais</h1>
+              <p class="text-justify">Atualização contínua das obrigações legais com evidências e planos de ação no
+                AGILE.</p>
+            </div>
+          </div>
+          <div class="flex items-center p-6 bg-black rounded-[40px] gap-6 text-white">
+            <i class="bi bi-caret-right-fill"></i>
+            <div class="space-y-2">
+              <h1>Equipe Multidisciplinar</h1>
+              <p class="text-justify">Conte com uma equipe qualificada para garantir o cumprimento das normativas com
+                precisão e eficiência.</p>
+            </div>
+          </div>
+          <div class="flex items-center p-6 bg-black rounded-[40px] gap-6 text-white">
+            <i class="bi bi-caret-right-fill"></i>
+            <div class="space-y-2">
+              <h1>Otimização Custo x Benefício</h1>
+              <p class="text-justify">Maximização dos recursos com economia significativa e foco nos processos
+                essenciais da sua empresa.</p>
+            </div>
+          </div>
+          <div class="flex items-center p-6 bg-black rounded-[40px] gap-6 text-white">
+            <i class="bi bi-caret-right-fill"></i>
+            <div class="space-y-2">
+              <h1>Preparação para Auditorias Tranquilas</h1>
+              <p class="text-justify">Tenha confiança nas auditorias com um serviço que garante conformidade e
+                tranquilidade.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-span-2 lg:col-span-1 bg-black text-white px-16 pt-64 pb-32 space-y-8 rounded-[40px]">
+        <h1 class="text-3xl">Gestão de Sistemas Completa</h1>
+        <p class="text-2xl text-justify">A Legnet oferece um conjunto completo de sistemas de gestão para melhorar seus
+          processos empresariais.</p>
+        <button class="neon-button py-3 px-6">OTIMIZE SEUS PROCESSSOS HOJE<button>
+      </div>
+
+      <div class="col-span-2 lg:col-span-1 bg-[#d0f702] px-16 pt-64 pb-32 space-y-8 rounded-[40px]">
+        <h1 class="text-3xl">Expertise em Requisitos Legais</h1>
+        <p class="text-2xl text-justify">Conte com nossa equipe multidisciplinar para interpretar e aplicar os
+          requisitos legais específicos de sua empresa.</p>
+        <ul class="list-none space-y-6 text-2xl">
+          <li class="flex items-center gap-3">
+            <i class="bi bi-check-circle"></i>
+            <span>Análise especializada dos requisitos legais pertinentes.</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="bi bi-check-circle"></i>
+            <span>Utilização do Sistema AGILE para gerenciamento eficiente.</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="bi bi-check-circle"></i>
+            <span>Maior banco de dados legislativo da América Latina, sempre atualizado.</span>
+          </li>
+        </ul>
+        <button class="access-button neon-button py-3 px-6">GARANTA A CONFORMIDADE LEGAL</button>
+      </div>
+
+      <div class="col-span-2 lg:col-span-1 bg-black text-white px-16 pt-64 pb-32 space-y-8 rounded-[40px]">
+        <h1 class="text-3xl">Atualização e Gestão de Requisitos Legais</h1>
+        <p class="text-2xl text-justify">Mantenha seu sistema de gerenciamento de legislação sempre atualizado com o
+          AGILE da Legnet</p>
+        <button class="neon-button py-3 px-6">SIMPLIFIQUE SUAS AUDITORIAS</button>
+      </div>
+
+      <div class="col-span-2">
+        <video class="rounded-[40px]" src="assets/agile_final.mp4" controls></video>
+      </div>
+
+      <div class="col-span-2 p-16 lg:p-32 rounded-[40px] text-center space-y-8 bg-[#a8a8a8] text-white">
+        <h1 class="text-4xl">JUNTE-SE ÀS MILHARES DE EMPRESAS QUE CONFIAM NA LEGNET. OTIMIZE SUA GESTÃO AGORA MESMO!
+        </h1>
+        <button class="glass-button px-6 py-3">TRANSFORME SUA AUDITORIA COM A LEGNET</button>
+      </div>
+
+      <div class="col-span-2 p-16 lg:p-32 rounded-[40px] text-center space-y-12 bg-black text-white">
+        <h1 class="text-2xl sm:text-3xl">Eficiência integrada e compliance garantido</h1>
+
+        <!-- Bloco 1 -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-6 lg:grid-cols-12 items-start sm:items-center gap-4 sm:gap-6 text-left">
+          <div
+            class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#b2d900] text-black flex items-center justify-center mx-auto sm:mx-0">
+            <i class="bi bi-caret-right-fill text-xl"></i>
+          </div>
+          <div class="space-y-2 sm:col-span-5 lg:col-span-11">
+            <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold">Gestão Integrada para Eficiência Empresarial</h2>
+            <p class="text-sm sm:text-base text-justify">Utilize a LegNet para integrar e otimizar seus processos
+              empresariais. Desde a implementação até a administração contínua, nossa solução proporciona eficiência
+              operacional e conformidade legal, permitindo que sua equipe se concentre nas iniciativas estratégicas que
+              impulsionam o crescimento.</p>
+          </div>
+        </div>
+
+        <!-- Bloco 2 -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-6 lg:grid-cols-12 items-start sm:items-center gap-4 sm:gap-6 text-left">
+          <div
+            class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#b2d900] text-black flex items-center justify-center mx-auto sm:mx-0">
+            <i class="bi bi-caret-right-fill text-xl"></i>
+          </div>
+          <div class="space-y-2 sm:col-span-5 lg:col-span-11">
+            <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold">Compliance Legal Garantido com Expertise
+              Multidisciplinar</h2>
+            <p class="text-sm sm:text-base text-justify">Conte com nossa equipe especializada para interpretar e aplicar
+              os requisitos legais específicos do seu setor. Utilizando o Sistema AGILE, que possui o maior banco de
+              dados legislativo da América Latina atualizado diariamente, garantimos que sua empresa esteja sempre em
+              conformidade. Isso proporciona tranquilidade durante auditorias internas e externas, além de otimizar o
+              processo de gestão de riscos.</p>
+          </div>
+        </div>
+
+        <!-- Bloco 3 -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-6 lg:grid-cols-12 items-start sm:items-center gap-4 sm:gap-6 text-left">
+          <div
+            class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#b2d900] text-black flex items-center justify-center mx-auto sm:mx-0">
+            <i class="bi bi-caret-right-fill text-xl"></i>
+          </div>
+          <div class="space-y-2 sm:col-span-5 lg:col-span-11">
+            <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold">Atualização Contínua e Monitoramento Eficiente
+            </h2>
+            <p class="text-sm sm:text-base text-justify">Mantenha seu sistema de gestão de requisitos legais sempre
+              atualizado com o AGILE da Legnet. Realizamos atualizações mensais das obrigações legais, inserindo
+              evidências e planos de ação conforme necessário.
+
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-span-2 p-16 lg:p-32 space-y-16 rounded-[40px]">
+        <h1 class="text-center text-2xl">Avaliações:</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="border-2 rounded-3xl p-6 space-y-6">
+            <div class="flex items-center gap-2">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-justify">
+              "A Legnet é nossa parceira há 15 anos. O site está sempre em atualização para atender as nossas
+              expectativas. O suporte de requisitos legais é eficiente e sempre está disponível para nos atender."
+            </p>
+            <div class="flex items-center gap-2">
+              <i class="bi bi-person"></i>
+              <h1>C E B R A C E</h1>
+            </div>
+          </div>
+          <div class="border-2 rounded-3xl p-6 space-y-6">
+            <div class="flex items-center gap-2">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-justify">
+              "Venho através desta demonstrar tamanha satisfação com o sistema e atendimento oferecido. Deixamos aqui
+              registrado a qualidade e a facilidade da ferramenta apresentada pela Legnet."
+            </p>
+            <div class="flex items-center gap-2">
+              <i class="bi bi-person"></i>
+              <h1>S I S T A C S.A</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-span-2 p-16 lg:p-32 space-y-16 bg-black text-white rounded-[40px]">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 items-center">
+          <div class="space-y-6 flex-1">
+            <h1 class="text-4xl">Veja motivos de destaque!</h1>
+            <p>Motivos de destaque para contratar a Legnet!</p>
+            <button class="neon-button py-3 px-6">TESTE A LEGNET AGORA</button>
+          </div>
+          <div class="space-y-16">
+            <div class="space-y-2">
+              <h1 class="text-xl">Conformidade Legal Garantida</h1>
+              <p class="text-justify">A LegNet garante conformidade legal, evitando penalidades e protegendo a reputação
+                das empresas, com uma equipe especializada que assegura o cumprimento eficiente das normativas legais.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <h1 class="text-xl">Gestão Eficiente e Integrada</h1>
+              <p class="text-justify">Além de garantir conformidade legal, a Legnet simplifica e otimiza a gestão
+                empresarial com uma plataforma centralizada, oferecendo uma visão em tempo real das obrigações legais,
+                proporcionando uma gestão eficiente e integrada.</p>
+            </div>
+          </div>
+          <div class="space-y-16">
+            <div class="space-y-2">
+              <h1 class="text-xl">Equipe Especializada</h1>
+              <p class="text-justify">Com uma equipe multidisciplinar especializada na interpretação e aplicação de
+                requisitos legais específicos, a LegNet assegura que todas as normativas relevantes sejam cumpridas de
+                maneira precisa e eficiente. </p>
+            </div>
+            <div class="space-y-2">
+              <h1 class="text-xl">Atualizações Mensais</h1>
+              <p class="text-justify">Com atualizações mensais automáticas e relatórios detalhados, a LegNet facilita o
+                monitoramento contínuo e a tomada de decisões baseadas em dados sólidos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-span-2 lg:col-span-1" x-data="{ openAccordion: 1 }">
+        <h2 class="text-3xl font-bold tracking-tight text-center text-gray-900 sm:text-4xl mb-8">
+          Dúvidas Frequentes
+        </h2>
+
+        <div class="space-y-4">
+          <div class="rounded-[40px] bg-white shadow-sm border border-gray-200">
+            <div class="p-6">
+              <button @click="openAccordion = openAccordion === 1 ? null : 1" type="button"
+                class="flex w-full items-center justify-between text-left gap-4">
+                <h3 class="text-lg font-medium text-gray-900">
+                  O que é a Auditoria Remota ou Presencial?
+                </h3>
+                <i class="bi bi-caret-down text-xl text-gray-500 transition-transform duration-300"
+                  :class="{ 'rotate-180': openAccordion === 1 }"></i>
+              </button>
+              <div x-show="openAccordion === 1" x-collapse class="mt-4">
+                <p class="leading-relaxed text-gray-600">
+                  A Auditoria Remota ou Presencial é um serviço especializado que analisa criticamente os processos,
+                  sistemas e conformidade de uma empresa, com foco na eficiência, segurança e excelência operacional.
+                  Essa auditoria pode ser realizada tanto presencialmente quanto remotamente, oferecendo flexibilidade e
+                  adaptabilidade às necessidades do cliente.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-[40px] bg-white shadow-sm border border-gray-200">
+            <div class="p-6">
+              <button @click="openAccordion = openAccordion === 2 ? null : 2" type="button"
+                class="flex w-full items-center justify-between text-left gap-4">
+                <h3 class="text-lg font-medium text-gray-900">
+                  Quais são os benefícios de realizar essa auditoria?
+                </h3>
+                <i class="bi bi-caret-down text-xl text-gray-500 transition-transform duration-300"
+                  :class="{ 'rotate-180': openAccordion === 2 }"></i>
+              </button>
+              <div x-show="openAccordion === 2" x-collapse class="mt-4">
+                <p class="leading-relaxed text-gray-600">
+                  Os principais benefícios incluem:
+                <ul>
+                  <li>
+                    Análise crítica dos processos internos, identificando pontos de melhoria.
+                  </li>
+                  <li>
+                    Melhoria contínua, ajudando a empresa a se manter competitiva e eficiente.
+                  </li>
+                </ul>
+                Aumento do desempenho operacional, otimizando recursos e reduzindo custos.
+                Além disso, o serviço é realizado por auditores especializados, garantindo resultados confiáveis e
+                adaptados às especificidades do cliente.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-[40px] bg-white shadow-sm border border-gray-200">
+            <div class="p-6">
+              <button @click="openAccordion = openAccordion === 3 ? null : 3" type="button"
+                class="flex w-full items-center justify-between text-left gap-4">
+                <h3 class="text-lg font-medium text-gray-900">
+                  Qual a diferença entre a Auditoria Remota e a Presencial?
+                </h3>
+                <i class="bi bi-caret-down text-xl text-gray-500 transition-transform duration-300"
+                  :class="{ 'rotate-180': openAccordion === 3 }"></i>
+              </button>
+              <div x-show="openAccordion === 3" x-collapse class="mt-4">
+                <p class="leading-relaxed text-gray-600">
+                <ul class="space-y-2">
+                  <li>
+                    Auditoria Remota: Realizada de forma online, utilizando ferramentas digitais para análise de
+                    documentos e entrevistas. É ideal para empresas que buscam reduzir custos com deslocamento ou
+                    possuem
+                    operações em várias localidades.
+                  </li>
+                  <li>
+                    Auditoria Presencial: Ocorre no local da empresa, permitindo uma análise mais detalhada e próxima
+                    das
+                    operações. É mais indicada para situações que exigem inspeções físicas e interações diretas.
+                    Ambas oferecem a mesma qualidade e precisão, dependendo das necessidades específicas do cliente.
+                  </li>
+                </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-[40px] bg-white shadow-sm border border-gray-200">
+            <div class="p-6">
+              <button @click="openAccordion = openAccordion === 4 ? null : 4" type="button"
+                class="flex w-full items-center justify-between text-left gap-4">
+                <h3 class="text-lg font-medium text-gray-900">
+                  Como funciona o processo de auditoria?
+                </h3>
+                <i class="bi bi-caret-down text-xl transition-transform duration-300"
+                  :class="{ 'rotate-180': openAccordion === 4 }"></i>
+              </button>
+              <div x-show="openAccordion === 4" x-collapse class="mt-4">
+                <p class="leading-relaxed text-gray-600">
+                  O processo é dividido em etapas claras:
+                <ul class="space-y-2">
+                  <li>
+                    Planejamento: Definição do escopo, objetivo e metodologia da auditoria.
+                  </li>
+                  <li>
+                    Execução: Coleta de dados, revisão de documentos e realização de entrevistas, seja presencialmente
+                    ou
+                    de forma remota.
+                  </li>
+                  <li>
+                    Relatório de auditoria: Elaboração de um documento com os principais achados, não conformidades e
+                    recomendações.
+                  </li>
+                  <li>
+                    Plano de ação: Proposta de melhorias e ações corretivas para otimizar os processos e atender às
+                    exigências normativas.
+                  </li>
+                </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-[40px] col-span-2 lg:col-span-1 bg-white p-8 lg:p-12">
+        <form class="space-y-3">
+          <div>
+            <label for="motivo">Motivo</label><br>
+            <select id="motivo" name="motivo" required class="w-full rounded-lg border-1 p-2">
+              <option value="Softwares Requisitos Legais">Softwares Requisitos Legais</option>
+              <option value="Softwares de Gestão">Softwares de Gestão</option>
+              <option value="Auditoria de Requisitos Legais">Auditoria de Requisitos Legais</option>
+              <option value="Serviço de Consultoria Técnica">Serviço de Consultoria Técnica</option>
+              <option value="EAD">EAD</option>
+              <option value="Outras opções">Outras opções</option>
+            </select>
+          </div>
+
+          <input type="text" name="nome" id="nome" placeholder="Seu nome:" class="w-full rounded-lg border-1 p-2">
+
+          <input type="email" name="email" id="email" placeholder="Seu melhor e-mail:" required
+            class="w-full rounded-lg border-1 p-2">
+
+          <input type="tel" name="telefone" id="telefone" placeholder="Telefone (com DDD):"
+            class="w-full rounded-lg border-1 p-2">
+
+          <input type="number" name="cnpj" id="cnpj" placeholder="CNPJ:" required
+            class="w-full rounded-lg border-1 p-2">
+
+          <textarea name="mensagem" id="mensagem" placeholder="Descreva sua dúvida aqui:"
+            class="w-full rounded-lg border-1 p-2" style="resize: none;"></textarea>
+
+          <button type="submit" class="w-full neon-button px-6 py-3">
+            Enviar
+          </button>
+        </form>
+      </div>
+
+      <div class="col-span-2 p-16 lg:p-32 rounded-[40px] shadow-sm space-y-6 text-center">
+        <h1 class="text-6xl">
+          A melhor<br>
+          decisão,<br>
+          no menor<br>
+          tempo.
+        </h1>
+        <p class="text-xl">
+          Garanta a conformidade legal da sua empresa hoje!<br>
+          Simplifique sua gestão legal com a Legnet. Reduza riscos e aumente a eficiência operacional com soluções<br>
+          integradas e suporte especializado experimente a legnet!
+        </p>
+        <button class="neon-button py-3 px-6">EXPERIMENTE A LEGNET</button>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

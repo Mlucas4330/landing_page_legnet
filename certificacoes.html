@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificações</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://fonts.cdnfonts.com/css/lufga" rel="stylesheet">
+</head>
+
+<body>
+  <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 z-50 p-4 w-full">
+    <div class="container relative mx-auto flex justify-between items-center">
+
+      <div class="hidden lg:flex gap-2 items-center">
+        <a href="index.html" class="glass-button p-3 flex items-center justify-center">
+          <img src="./assets/icon_neon_legnet.png" alt="Legnet" class="neon-glow h-8 w-8" />
+        </a>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> Legnet <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute glass items-center p-4 mt-3 flex gap-5 w-max">
+            <div class="p-4">
+              <a class="block underline" href="certificacoes.html">Certificações</a>
+              <a class="block underline mt-2" href="sobre_nos.html">Sobre nós</a>
+              <img class="mt-5 h-8 w-8" src="./assets/icon_neon_legnet.png" alt="Legnet">
+            </div>
+            <div class="p-4">
+              <iframe class="rounded-[40px]"
+                src="https://www.youtube.com/embed/bWTlU5edVrI?si=NCW7wg-4PLoTt42l"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> Requisitos Legais <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute glass mt-3 p-4 w-max">
+            <a href="agile.html" class="block px-4 py-2 underline">AGILE</a>
+            <a href="gor.html" class="block px-4 py-2 underline">GOR</a>
+            <a href="laipr.html" class="block px-4 py-2 underline">LAIPR</a>
+            <a href="modulo_bi.html" class="block px-4 py-2 underline">MÓDULO BI</a>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> Serviços <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute glass left-0 mt-3 flex gap-5 p-4">
+            <div>
+              <h4 class="text-lg text-center">Serviços Legnet</h4>
+              <div class="flex gap-4 mt-3">
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">Auditoria Remota ou Presencial</a>
+                  <a class="block px-4 py-2 underline" href="#">Terceirização da Gestão (Outsourcing)</a>
+                  <a class="block px-4 py-2 underline" href="#">Avaliação de Requisitos Legais</a>
+                  <a class="block px-4 py-2 underline" href="#">Implantação de Certificação ISO</a>
+                </div>
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">Licenciamento para Produtos Controlados</a>
+                  <a class="block px-4 py-2 underline" href="#">Licenciamento Ambiental</a>
+                  <a class="block px-4 py-2 underline" href="#">Licenciamento Ambiental de Base Operacional em
+                    Aeroportos</a>
+                  <a class="block px-4 py-2 underline" href="#">Levantamento de Aspetos e Impactos</a>
+                </div>
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">Levantamento de Perigos e Riscos</a>
+                  <a class="block px-4 py-2 underline" href="#">Treinamentos, Palesras e Workshops</a>
+                  <a class="block px-4 py-2 underline" href="#">Gap Analysis ISO 45001</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4 class="text-lg text-center">Certificações ISO</h4>
+              <div class="flex gap-4 mt-3">
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">ISO 9001 - Qualidade</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 14001 - Meio Ambiente</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 45001 - Saúde e Segurança do Trabalho</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 16001 / SA 8000 - Responsabilidade Social</a>
+                </div>
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">ISO 22000 / FSSC 22000 - Segurança Alimentar</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 39001 - Sistema de Seguança Viária</a>
+                  <a class="block px-4 py-2 underline" href="#">ISO 50001 - Energia</a>
+                  <a class="block px-4 py-2 underline" href="#">NBR 15401 - Turismo Sustentável</a>
+                </div>
+                <div>
+                  <a class="block px-4 py-2 underline" href="#">NBR ISO 37001 / ISO 19600 - Compliance e
+                    Antissuborno</a>
+                  <a class="block px-4 py-2 underline" href="#">SASSMAQ</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> Softwares <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute glass left-0 mt-3 p-4">
+            <h4 class="text-lg text-center">Softwares Legnet</h4>
+            <div class="flex gap-5 mt-5">
+              <div>
+                <a href="#" class="block px-4 py-2 underline">AGILE - Gerenciador de Requisitos Legais</a>
+                <a href="#" class="block px-4 py-2 underline">GLIC - Gerenciador de Licenças</a>
+                <a href="#" class="block px-4 py-2 underline">GNC - Gerenciador de Não-Conformidados</a>
+                <a href="#" class="block px-4 py-2 underline">GEDOC - Gerenciador de Documentos</a>
+              </div>
+              <div>
+                <a href="#" class="block px-4 py-2 underline">GIA - Gerenciador Integrado de Ações</a>
+                <a href="#" class="block px-4 py-2 underline">GFOR - Gerenciador de Fornecedores</a>
+                <a href="#" class="block px-4 py-2 underline">GOR - Gestão de Outros Requisitos</a>
+                <a href="#" class="block px-4 py-2 underline">GRISCO - Gerenciador de Riscos</a>
+              </div>
+              <div>
+                <a href="#" class="block px-4 py-2 underline">GAUD - Gerenciador de Auditoria</a>
+                <a href="#" class="block px-4 py-2 underline">GMUD - Gerenciador de Mudanças</a>
+                <a href="#" class="block px-4 py-2 underline">GCORE - Gerenciamento de Resíduos</a>
+                <a href="#" class="block px-4 py-2 underline">GOM - Gerenciador de Objetivos e Metas</a>
+              </div>
+              <div>
+                <a href="#" class="block px-4 py-2 underline">GEATA - Gerenciador de Atas de Reunião</a>
+                <a href="#" class="block px-4 py-2 underline">LAIPR - Levantamento de Aspectos, Impactos, Perigos e
+                  Riscos</a>
+                <a href="#" class="block px-4 py-2 underline">GEROC - Gerenciador de Ocorrências</a>
+                <a href="#" class="block px-4 py-2 underline">GRO-PGR - Programa de Gerenciamento de Riscos</a>
+              </div>
+              <div>
+                <a href="#" class="block px-4 py-2 underline">GFISPQ - Gerenciador de FISPQ</a>
+                <a href="#" class="block px-4 py-2 underline">GERGO - Gerenciador de Ergonomia</a>
+                <a href="#" class="block px-4 py-2 underline">MÓDULO BI - Integre qualquer software Legnet ao Power
+                  BI</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+          <button class="glass-button px-6 py-3 flex items-center gap-2"> EAD <i
+              class="bi bi-caret-down transform transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute glass mt-3 p-4">
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Cursos Sobre Gestão de
+              Qualidade</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Cursos Sobre Meio
+              Ambiente</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Cursos Livres Sobre
+              Gestão</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Cursos Sobre Saúde e
+              Segurança
+              Ocupacional</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Meus Cursos</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Acessar</a>
+            <a href="https://ead.legnet.com.br" target="_blank" class="block px-4 py-2 underline">Contato</a>
+          </div>
+        </div>
+
+        <a href="blog.html" target="_blank" class="glass-button px-6 py-3"> Blog </a>
+      </div>
+
+      <a href="index.html" class="lg:hidden glass-button p-3 flex items-center justify-center">
+        <img src="./assets/icon_neon_legnet.png" alt="Legnet" class="neon-glow h-8 w-8" />
+      </a>
+
+
+      <div class="flex gap-2 items-center">
+        <div class="hidden sm:flex gap-2">
+          <button class="access-button neon-button px-6 py-3"> Acessar Legnet </button>
+          <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+            <button class="neon-button px-6 py-3 font-medium flex items-center gap-2"> Peça Proposta <i
+                class="bi bi-caret-down transform transition-transform duration-300"
+                :class="{ 'rotate-180': open }"></i></button>
+            <div x-show="open" x-transition class="absolute glass mt-3 p-4">
+              <h4 class="text-lg text-center">Preencha seus dados</h4>
+              <form class="p-4">
+                <div class="mb-1">
+                  <label for="motivo">Motivo:</label><br>
+                  <select class="border-1 rounded-lg p-2 w-full" required name="motivo" id="motivo">
+                    <option value="">Selecione</option>
+                    <option value="Softwares Requisitos Legais">Softwares Requisitos Legais </option>
+                    <option value="Softwares de Gestão">Softwares de Gestão </option>
+                    <option value="Auditoria de Requisitos Legais">Auditoria de Requisitos Legais </option>
+                    <option value="Serviço de Consultoria Técnica">Serviço de Consultoria Técnica </option>
+                    <option value="EAD">EAD</option>
+                    <option value="Outras opções">Outras opções</option>
+                  </select>
+                </div>
+                <input class="mb-1 rounded-lg border-1 p-2" required type="text" name="nome" id="nome"
+                  placeholder="Seu Nome:">
+                <input class="mb-1 rounded-lg border-1 p-2" required type="email" name="email" id="email"
+                  placeholder="Seu melhor e-mail:">
+                <input class="mb-1 rounded-lg border-1 p-2" required type="text" name="telefone" id="telefone"
+                  placeholder="Telefone (com DDD):">
+                <input class="mb-1 rounded-lg border-1 p-2" required type="text" name="cnpj" id="cnpj"
+                  placeholder="CNPJ">
+                <textarea class="mb-1 rounded-lg border-1 p-2 w-full" style="resize: none;" name="solucao" id="solucao"
+                  placeholder="Descreva sua dúvida/solução:"></textarea>
+                <button class="neon-button px-6 py-3 w-full">Enviar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <button @click="mobileMenuOpen = !mobileMenuOpen"
+          class="lg:hidden glass-button px-6 py-3 flex items-center justify-center">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+
+      <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="transform -translate-x-full" x-transition:enter-end="transform translate-x-0"
+        x-transition:leave="transition ease-in duration-300" x-transition:leave-start="transform translate-x-0"
+        x-transition:leave-end="transform -translate-x-full"
+        class="fixed top-0 left-0 w-full h-full bg-white z-50 lg:hidden" @click.away="mobileMenuOpen = false">
+        <div class="flex justify-end p-4">
+          <button @click="mobileMenuOpen = false">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <nav class="flex flex-col items-center justify-center h-full -mt-16 text-xl space-y-4">
+          <div x-data="{ open: false }">
+            <button @click="open = !open" class="flex items-center gap-2 px-6 py-3">
+              Legnet <i class="bi bi-caret-down transition-transform" :class="{ 'rotate-180': open }"></i>
+            </button>
+            <div x-show="open" class="flex flex-col items-center text-base space-y-2 mt-2">
+              <a class="block underline" href="certificacoes.html">Certificações</a>
+              <a class="block underline" href="#">Sobre nós</a>
+            </div>
+          </div>
+
+          <div x-data="{ open: false }">
+            <button @click="open = !open" class="flex items-center gap-2 px-6 py-3">
+              Requisitos Legais <i class="bi bi-caret-down transition-transform" :class="{ 'rotate-180': open }"></i>
+            </button>
+            <div x-show="open" class="flex flex-col items-center text-base space-y-2 mt-2">
+              <a href="agile.html" class="block underline">AGILE</a>
+              <a href="gor.html" class="block underline">GOR</a>
+              <a href="laipr.html" class="block underline">LAIPR</a>
+              <a href="modulo_bi.html" class="block underline">MÓDULO BI</a>
+            </div>
+          </div>
+
+          <a href="blog.html" target="_blank" class="px-6 py-3">Blog</a>
+
+          <div class="flex flex-col gap-4 mt-8 pt-4">
+            <button class="access-button neon-button px-6 py-3"> Acessar Legnet </button>
+            <button class="neon-button px-6 py-3 font-medium"> Faça Proposta </button>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="container mx-auto my-16">
+    <div class="grid grid-cols-2 gap-6">
+
+      <div class="bg-[#d0f702] px-16 pt-64 pb-32 rounded-[40px]">
+        <h1 class="text-3xl">Nossas Certificações</h1>
+        <p class="text-2xl pt-8 text-justify">A Legnet renovou com sucesso suas certificações nas normas ISO 9001:2015,
+          ISO
+          14001:2015 e ISO 45001:2018.</p>
+      </div>
+
+      <div class="bg-black text-white px-16 pt-64 pb-32 rounded-[40px]">
+        <h1 class="text-3xl">Renovações das Certificações</h1>
+        <p class="text-2xl pt-8 text-justify">Para encerrar um ano desafiador, temos o orgulho de comunicar que, em
+          dezembro de 2023,
+          pelo 21º ano consecutivo, a LEGNET obteve sua recertificação no sistema de gestão integrado SGI-ISO (9001,
+          14001, 45001). Nos últimos nove anos, não foram identificadas não conformidades, refletindo nossos altos
+          níveis de eficiência operacional.
+
+          A auditoria externa, realizada pela Bureau Veritas (BV), destacou nossa maturidade na gestão e melhoria
+          contínua dos processos. Esse sucesso é resultado do empenho e dedicação de nossa equipe e lideranças
+          comprometidas, que aumentam continuamente o desempenho do Sistema de Gestão Integrado.</p>
+      </div>
+
+      <div class="col-span-2 p-32 rounded-[40px] bg-[#a8a8a8] text-[#FFFFFF]">
+        <div class="grid grid-cols-3 gap-6">
+          <img class="cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
+            src="assets/iso-14001va-724x1024.png" alt="iso">
+          <img class="cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
+            src="assets/iso-45001-val-724x1024.png" alt="iso">
+          <img class="cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
+            src="assets/iso-9001val-724x1024.png" alt="iso">
+        </div>
+      </div>
+
+      <div class="col-span-2 p-32 rounded-[40px] shadow-sm  space-y-6 text-center">
+        <h1 class="text-6xl">
+          A melhor<br>
+          decisão,<br>
+          no menor<br>
+          tempo.
+        </h1>
+        <p class="text-xl">
+          Garanta a conformidade legal da sua empresa hoje!<br>
+          Simplifique sua gestão legal com a Legnet. Reduza riscos e aumente a eficiência operacional com soluções<br>
+          integradas e suporte especializado experimente a legnet!
+        </p>
+        <button class="neon-button py-3 px-6">EXPERIMENTE A LEGNET</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
