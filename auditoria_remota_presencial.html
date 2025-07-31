@@ -23,7 +23,7 @@
 
       <div class="hidden lg:flex gap-2 items-center">
         <a href="index.html" class="glass-button p-3 flex items-center justify-center">
-          <img src="./assets/icon_neon_legnet.png" alt="Legnet" class="neon-glow h-8 w-8" />
+          <img src="./assets/icone novo legnet.png" alt="Legnet" class="neon-glow h-8 w-8" />
         </a>
 
         <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
@@ -34,7 +34,7 @@
             <div class="p-4">
               <a class="block underline" href="certificacoes.html">Certificações</a>
               <a class="block underline mt-2" href="sobre_nos.html">Sobre nós</a>
-              <img class="mt-5 h-8 w-8" src="./assets/icon_neon_legnet.png" alt="Legnet">
+              <img class="mt-5 h-8 w-8" src="./assets/icone novo legnet.png" alt="Legnet">
             </div>
             <div class="p-4">
               <iframe class="rounded-[40px]"
@@ -190,7 +190,7 @@
       </div>
 
       <a href="index.html" class="lg:hidden glass-button p-3 flex items-center justify-center">
-        <img src="./assets/icon_neon_legnet.png" alt="Legnet" class="neon-glow h-8 w-8" />
+        <img src="./assets/icone novo legnet.png" alt="Legnet" class="neon-glow h-8 w-8" />
       </a>
 
 
@@ -281,6 +281,33 @@
       </div>
     </div>
   </header>
+
+  <div x-data="{ open: true}" class="fixed bottom-24 right-4 z-10 floating-video-container" x-show="open">
+    <div class="relative flex justify-center">
+      <video width="100%" height="100%" style="height: 280px; width: 180px; border-radius: 48px !important;" controls
+        controlsList="nodownload" disablePictureInPicture autoPlay loop muted playsInline
+        class="object-cover shadow-lg">
+        <source src="./assets/criativo_02_vertical.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeos.
+      </video>
+      <button @click="open = false"
+        class="absolute -top-2 -right-2 bg-gray-800 text-white rounded-full w-6 h-6 p-1 flex items-center justify-center cursor-pointer">
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+    <form class="mt-2 bg-[#c2c2c2] rounded-3xl">
+      <div class="flex flex-col items-center pl-3 pr-1 py-3">
+        <input class="text-sm" type="text" name="nome" id="nome" placeholder="NOME">
+        <input class="text-sm" type="email" name="email" id="email" placeholder="EMAIL@EMAIL.COM">
+      </div>
+      <a href="https://wa.me/5521997279076" target="_blank"
+        style="color: black !important; border-radius: 48px; display: flex !important;" rel="noopener noreferrer"
+        class="flex items-center justify-center W-full bg-[#c5ff00] text-black font-medium py-2 px-4 shadow-lg hover:shadow-xl transition-all">
+        <i class="bi bi-telephone"></i>
+        WhatsApp
+      </a>
+    </form>
+  </div>
 
   <div class="container mx-auto my-16">
     <div class="grid grid-cols-2 gap-6">

@@ -24,7 +24,7 @@
 
       <div class="hidden lg:flex gap-2 items-center">
         <a href="index.html" class="glass-button p-3 flex items-center justify-center">
-          <img src="./assets/icon_neon_legnet.png" alt="Legnet" class="neon-glow h-8 w-8" />
+          <img src="./assets/icone novo legnet.png" alt="Legnet" class="neon-glow h-8 w-8" />
         </a>
 
         <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
@@ -35,7 +35,7 @@
             <div class="p-4">
               <a class="block underline" href="certificacoes.html">Certificações</a>
               <a class="block underline mt-2" href="sobre_nos.html">Sobre nós</a>
-              <img class="mt-5 h-8 w-8" src="./assets/icon_neon_legnet.png" alt="Legnet">
+              <img class="mt-5 h-8 w-8" src="./assets/icone novo legnet.png" alt="Legnet">
             </div>
             <div class="p-4">
               <iframe class="rounded-[40px]"
@@ -190,7 +190,7 @@
       </div>
 
       <a href="index.html" class="lg:hidden glass-button p-3 flex items-center justify-center">
-        <img src="./assets/icon_neon_legnet.png" alt="Legnet" class="neon-glow h-8 w-8" />
+        <img src="./assets/icone novo legnet.png" alt="Legnet" class="neon-glow h-8 w-8" />
       </a>
 
 
@@ -780,7 +780,9 @@ slides: [
                 <p class="text-justify" x-text="slide.text"></p>
                 <div class="flex justify-end">
                   <button class="glass-button px-6 py-3">
-                    <i class="bi bi-arrow-right"></i>
+                    <a :href="`${slide.link}`" target="_blank">
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
                   </button>
                 </div>
               </div>
@@ -1176,7 +1178,13 @@ slides: [
   </section>
 
   <section class="container mx-auto flex justify-center mb-16">
-    <button class="neon-button p-6">QUERO MINHA DEMONSTRAÇÃO GRATUITA</button>
+    <div class="px-8 bg-gray-300 rounded-[40px]">
+      <div class="px-8 bg-zinc-400 rounded-[40px]">
+        <div class="px-8 bg-neutral-500 rounded-[40px]">
+          <button class="neon-button p-6 font-bold">QUERO MINHA DEMONSTRAÇÃO GRATUITA</button>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer class="bg-[#f5f5f5]">
