@@ -428,7 +428,6 @@
       <div class="col-span-2 p-16 lg:p-32 rounded-[40px] text-center space-y-12 bg-black text-white">
         <h1 class="text-2xl sm:text-3xl">Auditoria Legal e Gestão Sustentável</h1>
 
-        <!-- Bloco 1 -->
         <div
           class="grid grid-cols-1 sm:grid-cols-6 lg:grid-cols-12 items-start sm:items-center gap-4 sm:gap-6 text-left">
           <div
@@ -445,7 +444,6 @@
           </div>
         </div>
 
-        <!-- Bloco 2 -->
         <div
           class="grid grid-cols-1 sm:grid-cols-6 lg:grid-cols-12 items-start sm:items-center gap-4 sm:gap-6 text-left">
           <div
@@ -463,7 +461,6 @@
           </div>
         </div>
 
-        <!-- Bloco 3 -->
         <div
           class="grid grid-cols-1 sm:grid-cols-6 lg:grid-cols-12 items-start sm:items-center gap-4 sm:gap-6 text-left">
           <div
@@ -557,7 +554,7 @@
         </div>
       </div>
 
-      <div class="col-span-2 lg:col-span-1" x-data="{ openAccordion: 1 }">
+      <div class="col-span-2 lg:col-span-1" x-data="{ openAccordion: null }">
         <h2 class="text-3xl font-bold tracking-tight text-center text-gray-900 sm:text-4xl mb-8">
           Dúvidas Frequentes
         </h2>
@@ -590,25 +587,18 @@
               <button @click="openAccordion = openAccordion === 2 ? null : 2" type="button"
                 class="flex w-full items-center justify-between text-left gap-4">
                 <h3 class="text-lg font-medium text-gray-900">
-                  Quais são os benefícios de realizar essa auditoria?
+                  Quem pode contratar esse serviço?
                 </h3>
                 <i class="bi bi-caret-down text-xl text-gray-500 transition-transform duration-300"
                   :class="{ 'rotate-180': openAccordion === 2 }"></i>
               </button>
               <div x-show="openAccordion === 2" x-collapse class="mt-4">
                 <p class="leading-relaxed text-gray-600">
-                  Os principais benefícios incluem:
-                <ul>
-                  <li>
-                    Análise crítica dos processos internos, identificando pontos de melhoria.
-                  </li>
-                  <li>
-                    Melhoria contínua, ajudando a empresa a se manter competitiva e eficiente.
-                  </li>
-                </ul>
-                Aumento do desempenho operacional, otimizando recursos e reduzindo custos.
-                Além disso, o serviço é realizado por auditores especializados, garantindo resultados confiáveis e
-                adaptados às especificidades do cliente.
+                  Esse serviço é destinado a empresas de diversos setores que buscam garantir a conformidade legal e
+                  atender aos requisitos das normas ISO, como ISO 9001 (gestão da qualidade), ISO 14001 (gestão
+                  ambiental) e ISO 45001 (saúde e segurança ocupacional). Ele é ideal tanto para organizações já
+                  certificadas quanto para aquelas que desejam obter certificações ou se preparar para auditorias
+                  futuras.
                 </p>
               </div>
             </div>
@@ -619,28 +609,23 @@
               <button @click="openAccordion = openAccordion === 3 ? null : 3" type="button"
                 class="flex w-full items-center justify-between text-left gap-4">
                 <h3 class="text-lg font-medium text-gray-900">
-                  Qual a diferença entre a Auditoria Remota e a Presencial?
+                  Quais normas estão incluídas na avaliação (ISO 9001, ISO 14001, ISO 45001)?
                 </h3>
                 <i class="bi bi-caret-down text-xl text-gray-500 transition-transform duration-300"
                   :class="{ 'rotate-180': openAccordion === 3 }"></i>
               </button>
               <div x-show="openAccordion === 3" x-collapse class="mt-4">
-                <p class="leading-relaxed text-gray-600">
-                <ul class="space-y-2">
-                  <li>
-                    Auditoria Remota: Realizada de forma online, utilizando ferramentas digitais para análise de
-                    documentos e entrevistas. É ideal para empresas que buscam reduzir custos com deslocamento ou
-                    possuem
-                    operações em várias localidades.
-                  </li>
-                  <li>
-                    Auditoria Presencial: Ocorre no local da empresa, permitindo uma análise mais detalhada e próxima
-                    das
-                    operações. É mais indicada para situações que exigem inspeções físicas e interações diretas.
-                    Ambas oferecem a mesma qualidade e precisão, dependendo das necessidades específicas do cliente.
-                  </li>
+                <p>A avaliação cobre as principais normas de gestão:</p>
+                <ul class="list-disc pl-5 mt-2 space-y-1">
+                  <li><strong>ISO 9001</strong>: Gestão da Qualidade, que foca na melhoria contínua e satisfação do
+                    cliente.</li>
+                  <li><strong>ISO 14001</strong>: Gestão Ambiental, que trata da sustentabilidade e conformidade
+                    ambiental.</li>
+                  <li><strong>ISO 45001</strong>: Saúde e Segurança Ocupacional, que aborda a proteção dos trabalhadores
+                    e prevenção de riscos.</li>
                 </ul>
-                </p>
+                <p class="mt-2">O serviço analisa como a empresa está atendendo aos requisitos legais e específicos de
+                  cada norma, garantindo alinhamento com as regulamentações aplicáveis.</p>
               </div>
             </div>
           </div>
@@ -650,32 +635,23 @@
               <button @click="openAccordion = openAccordion === 4 ? null : 4" type="button"
                 class="flex w-full items-center justify-between text-left gap-4">
                 <h3 class="text-lg font-medium text-gray-900">
-                  Como funciona o processo de auditoria?
+                  Com que frequência a reavaliação deve ser realizada?
                 </h3>
                 <i class="bi bi-caret-down text-xl transition-transform duration-300"
                   :class="{ 'rotate-180': openAccordion === 4 }"></i>
               </button>
               <div x-show="openAccordion === 4" x-collapse class="mt-4">
                 <p class="leading-relaxed text-gray-600">
-                  O processo é dividido em etapas claras:
-                <ul class="space-y-2">
-                  <li>
-                    Planejamento: Definição do escopo, objetivo e metodologia da auditoria.
-                  </li>
-                  <li>
-                    Execução: Coleta de dados, revisão de documentos e realização de entrevistas, seja presencialmente
-                    ou
-                    de forma remota.
-                  </li>
-                  <li>
-                    Relatório de auditoria: Elaboração de um documento com os principais achados, não conformidades e
-                    recomendações.
-                  </li>
-                  <li>
-                    Plano de ação: Proposta de melhorias e ações corretivas para otimizar os processos e atender às
-                    exigências normativas.
-                  </li>
+                  A frequência da reavaliação depende das características da empresa, mudanças na legislação e
+                  exigências das normas ISO. Em geral, recomenda-se:
+                <ul class="list-disc pl-5 mt-2 space-y-1">
+                  <li><strong>Empresas certificadas</strong>: Realizar reavaliações anualmente ou antes de auditorias
+                    externas para manter a certificação.</li>
+                  <li><strong>Mudanças significativas</strong>: Reavaliar sempre que houver alterações importantes nas
+                    atividades da empresa, legislação ou estrutura organizacional.</li>
                 </ul>
+                <p class="mt-2">Manter uma periodicidade regular é essencial para evitar não conformidades e estar
+                  sempre em alinhamento com as exigências legais e normativas.</p>
                 </p>
               </div>
             </div>
